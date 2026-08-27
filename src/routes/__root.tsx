@@ -14,13 +14,9 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "SPC Meet — Visioconférence STAF PRINT CENTER" },
-      {
-        name: "description",
-        content:
-          "SPC Meet, la visioconférence officielle et exclusive de STAF PRINT CENTER. Accès par code ou lien d'invitation.",
-      },
-      { name: "author", content: "STAF PRINT CENTER" },
+      { title: PAGE_TITLE },
+      { name: "description", content: PAGE_DESC },
+      { name: "author", content: SITE.name },
       { property: "og:title", content: "SPC Meet — Visioconférence STAF PRINT CENTER" },
       {
         property: "og:description",
