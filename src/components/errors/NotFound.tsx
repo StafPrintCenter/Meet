@@ -1,71 +1,87 @@
 import { Link } from "@tanstack/react-router";
-import { VideoOff, Home, ArrowLeft, Radio } from "lucide-react";
+import { UserX, MicOff, VideoOff, PhoneOff, Compass, ArrowLeft } from "lucide-react";
 
 export function NotFoundComponent() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background p-6 md:p-12 select-none">
-      <div className="grid w-full max-w-4xl gap-8 items-center md:grid-cols-12 md:gap-16">
+    <div className="relative min-h-screen w-full bg-slate-950 text-slate-100 flex flex-col justify-between p-4 md:p-8 select-none overflow-hidden font-sans">
 
-        {/* Colonne Gauche : Caméra coupée & Mire vidéo */}
-        <div className="md:col-span-5 flex flex-col items-center justify-center relative min-h-60 md:min-h-75">
-          <div className="relative w-full max-w-xs aspect-video rounded-2xl border border-border/80 bg-black/90 p-4 shadow-2xl flex flex-col items-center justify-center overflow-hidden">
-            {/* Effet visuel d'onde et de signal perdu */}
-            <div className="absolute inset-0 bg-radial from-destructive/10 via-transparent to-transparent animate-pulse" />
-
-            <div className="relative z-10 flex flex-col items-center gap-3">
-              <div className="flex h-14 w-14 items-center justify-center rounded-full bg-destructive/15 text-destructive border border-destructive/30">
-                <VideoOff className="h-7 w-7" strokeWidth={1.75} />
-              </div>
-              <span className="font-mono text-xs text-muted-foreground tracking-wider">
-                FLUX_VIDEO_ABSENT
-              </span>
-            </div>
-
-            {/* Lignes de scan style moniteur vidéo */}
-            <div className="absolute inset-0 pointer-events-none opacity-20 bg-[linear-gradient(to_bottom,transparent_50%,rgba(0,0,0,0.8)_51%)] bg-size-[100%_4px]" />
-          </div>
-
-          {/* Badge technique sous le flux */}
-          <span className="absolute -bottom-3 px-3 py-1 text-[11px] font-mono font-bold tracking-widest text-destructive bg-destructive/10 border border-destructive/20 rounded-full">
-            SALON_NON_TROUVE_404
+      {/* En-tête : Simulation de la barre de statut de la visio */}
+      <header className="w-full flex items-center justify-between border-b border-slate-800/80 pb-4">
+        <div className="flex items-center gap-3">
+          <div className="h-3 w-3 rounded-full bg-rose-500 animate-ping" />
+          <span className="font-mono text-xs text-rose-400 uppercase tracking-widest">
+            SALON_INCONNU // 404
           </span>
         </div>
+        <div className="text-xs font-mono text-slate-500">
+          ROOM_ID: <span className="text-slate-400 line-through">XXX-XXXX-XXX</span>
+        </div>
+      </header>
 
-        {/* Colonne Droite : Explications & Navigation */}
-        <div className="md:col-span-7 text-center md:text-left flex flex-col justify-center">
-          <div className="inline-flex mx-auto md:mx-0 items-center gap-1.5 px-3 py-1 text-xs font-medium text-muted-foreground bg-muted border border-border/60 rounded-full w-fit">
-            <Radio size={12} className="text-destructive animate-pulse" />
-            Réunion introuvable
+      {/* Grille de visioconférence vide (Artificielle) */}
+      <main className="relative my-auto w-full max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-4 py-8">
+
+        {/* Tuile Participant 1 - Inexistant */}
+        <div className="relative aspect-video rounded-2xl border border-slate-800/80 bg-slate-900/40 backdrop-blur-md flex flex-col items-center justify-center p-6 text-center">
+          <div className="h-16 w-16 rounded-full bg-slate-800/80 flex items-center justify-center text-slate-600 mb-3 border border-slate-700/50">
+            <UserX className="h-8 w-8" />
           </div>
+          <p className="text-xs font-mono text-slate-500">Participant introuvable</p>
+        </div>
 
-          <h1 className="mt-4 font-display text-3xl font-extrabold tracking-tight text-foreground sm:text-4xl lg:text-5xl">
-            Ce salon n'existe pas.
+        {/* Tuile Participant 2 - Signal Perdu */}
+        <div className="hidden md:flex relative aspect-video rounded-2xl border border-slate-800/80 bg-slate-900/40 backdrop-blur-md flex-col items-center justify-center p-6 text-center">
+          <div className="h-16 w-16 rounded-full bg-slate-800/80 flex items-center justify-center text-slate-600 mb-3 border border-slate-700/50">
+            <VideoOff className="h-8 w-8 text-slate-600" />
+          </div>
+          <p className="text-xs font-mono text-slate-500">Flux vidéo désactivé</p>
+        </div>
+
+        {/* Overlay d'Anomalie Central (Effet HUD / Carte d'Alerte) */}
+        <div className="absolute inset-0 m-auto max-w-md h-fit rounded-3xl border border-rose-500/30 bg-slate-950/90 p-6 md:p-8 shadow-2xl backdrop-blur-xl text-center space-y-4">
+          <span className="inline-block px-3 py-1 rounded-full text-[10px] font-mono font-bold bg-rose-500/10 text-rose-400 border border-rose-500/20">
+            CODE DE RÉUNION INVALIDE
+          </span>
+
+          <h1 className="text-2xl md:text-3xl font-black tracking-tight text-white">
+            Personne au bout de la ligne.
           </h1>
 
-          <p className="mt-4 text-base text-muted-foreground leading-relaxed max-w-lg">
-            Le code de réunion est incorrect, le salon a été fermé par l'hôte ou le lien d'invitation a expiré.
+          <p className="text-sm text-slate-400 leading-relaxed">
+            La réunion que vous tentez de rejoindre n'existe pas ou a déjà pris fin. Vérifiez l'URL de votre invitation.
           </p>
 
-          <div className="mt-8 flex flex-col sm:flex-row items-center gap-3 justify-center md:justify-start">
+          <div className="pt-2 flex flex-col sm:flex-row items-center justify-center gap-3">
             <Link
               to="/"
-              className="inline-flex w-full sm:w-auto items-center justify-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground shadow-md transition hover:opacity-90 active:scale-95 cursor-pointer"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl bg-white text-slate-950 font-semibold text-sm hover:bg-slate-200 transition active:scale-95"
             >
-              <Home size={16} />
-              Retour au lobby
+              <Compass className="h-4 w-4" />
+              Rejoindre le Lobby
             </Link>
-
             <button
               onClick={() => window.history.back()}
-              className="inline-flex w-full sm:w-auto items-center justify-center gap-2 rounded-full border border-border bg-card px-6 py-3 text-sm font-semibold text-foreground transition hover:bg-muted active:scale-95 cursor-pointer"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl border border-slate-800 bg-slate-900/80 text-slate-300 font-semibold text-sm hover:bg-slate-800 transition active:scale-95"
             >
-              <ArrowLeft size={16} />
-              Page précédente
+              <ArrowLeft className="h-4 w-4" />
+              Retour
             </button>
           </div>
         </div>
+      </main>
 
-      </div>
+      {/* Barre de contrôle fictive en bas (Inspirée de Meet/Zoom) */}
+      <footer className="w-full max-w-md mx-auto flex items-center justify-center gap-4 p-3 rounded-full border border-slate-800/80 bg-slate-900/60 backdrop-blur-md opacity-60 pointer-events-none">
+        <div className="p-3 rounded-full bg-slate-800 text-slate-500">
+          <MicOff className="h-5 w-5" />
+        </div>
+        <div className="p-3 rounded-full bg-slate-800 text-slate-500">
+          <VideoOff className="h-5 w-5" />
+        </div>
+        <div className="p-3 rounded-full bg-rose-600 text-white">
+          <PhoneOff className="h-5 w-5" />
+        </div>
+      </footer>
     </div>
   );
 }
