@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { SiteFooter, SpcLogo, StatusPill } from "@/components/site/Brand";
+import { SpcLogo, StatusPill } from "@/components/site/Brand";
 import { PageFooter } from "@/components/site";
 import { HeroSection, DemoRoomsSection, PillarsSection } from "@/components/pages";
 
