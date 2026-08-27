@@ -22,7 +22,7 @@ export function NotFoundComponent() {
             </div>
 
             {/* Lignes de scan style moniteur vidéo */}
-            <div className="absolute inset-0 pointer-events-none opacity-20 bg-[linear-gradient(to_bottom,transparent_50%,rgba(0,0,0,0.8)_51%)] bg-[length:100%_4px]" />
+            <div className="absolute inset-0 pointer-events-none opacity-20 bg-[linear-gradient(to_bottom,transparent_50%,rgba(0,0,0,0.8)_51%)] bg-size-[100%_4px]" />
           </div>
 
           {/* Badge technique sous le flux */}
