@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { SpcLogo, StatusPill } from "@/components/site/Brand";
-import { PageFooter } from "@/components/site";
+import { StatusPill } from "@/components/site/Brand";
+import { PageHeader, PageFooter } from "@/components/site";
 import { HeroSection, DemoRoomsSection, PillarsSection } from "@/components/pages";
 
 export const Route = createFileRoute("/")({
@@ -26,10 +26,9 @@ export const Route = createFileRoute("/")({
 function Home() {
   return (
     <div className="paper-grid flex min-h-screen flex-col bg-background font-sans text-foreground">
-      <header className="mx-auto flex w-full max-w-6xl items-center justify-between gap-4 px-6 py-5">
-        <SpcLogo />
+      <PageHeader>
         <StatusPill />
-      </header>
+      </PageHeader>
 
       <main className="flex-1">
         <HeroSection />
