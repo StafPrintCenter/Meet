@@ -15,7 +15,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Badge } from "@/components/ui/badge";
-import { SpcLogo } from "@/components/spc/Brand";
+import { SpcLogo } from "@/components/site/Brand";
 import { VideoTile } from "@/components/meet/VideoTile";
 import { useLocalMedia } from "@/hooks/useLocalMedia";
 import { findRoom } from "@/lib/meet-data";
