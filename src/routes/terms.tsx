@@ -1,6 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { SpcLogo } from "@/components/site/Brand";
-import { PageFooter } from "@/components/site";
+import { PageHeader, PageFooter } from "@/components/site";
 
 export const Route = createFileRoute("/terms")({
   head: () => ({
@@ -55,15 +54,15 @@ const sections = [
 function Terms() {
   return (
     <div className="paper-grid flex min-h-screen flex-col">
-      <header className="mx-auto flex w-full max-w-3xl items-center justify-between px-4 py-5">
-        <SpcLogo />
+      <PageHeader>
         <Link
           to="/"
           className="text-sm text-muted-foreground transition-colors hover:text-foreground"
         >
           Retour à l'accueil
         </Link>
-      </header>
+      </PageHeader>
+
       <main className="mx-auto w-full max-w-3xl flex-1 px-4 py-8">
         <h1 className="font-display text-3xl tracking-tight sm:text-4xl">
           Conditions d'utilisation
