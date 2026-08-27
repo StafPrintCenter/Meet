@@ -312,7 +312,7 @@ function RoomPage() {
             : "grid-cols-2 sm:grid-cols-3 lg:grid-cols-4";
 
   return (
-    <div className="flex h-[100dvh] flex-col bg-slate-deep text-primary-foreground">
+    <div className="flex h-dvh flex-col bg-slate-deep text-primary-foreground">
       {/* En-tête salon */}
       <header className="flex shrink-0 items-center justify-between gap-3 px-3 py-3 sm:px-5">
         <div className="min-w-0">
@@ -817,7 +817,7 @@ function ShareSurface({ stream }: { stream: MediaStream }) {
     const el = ref.current;
     if (el && el.srcObject !== stream) {
       el.srcObject = stream;
-      el.play().catch(() => {});
+      el.play().catch(() => { });
     }
   }, [stream]);
   return (
