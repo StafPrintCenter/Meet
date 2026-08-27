@@ -3,7 +3,7 @@ import { useMemo, useState } from "react";
 import { Activity, Ban, Clock, Link2Off, Radio, ShieldAlert, Users, Video } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { SiteFooter, SpcLogo } from "@/components/spc/Brand";
+import { SiteFooter, SpcLogo } from "@/components/site/Brand";
 import { ALL_ROOMS, formatDuration, type Room } from "@/lib/meet-data";
 import { toast } from "sonner";
 
@@ -55,10 +55,10 @@ function AdminMeet() {
       prev.map((r) =>
         r.id === id
           ? {
-              ...r,
-              revoked: true,
-              code: `${Math.floor(100 + Math.random() * 899)}-${Math.floor(100 + Math.random() * 899)}`,
-            }
+            ...r,
+            revoked: true,
+            code: `${Math.floor(100 + Math.random() * 899)}-${Math.floor(100 + Math.random() * 899)}`,
+          }
           : r,
       ),
     );
