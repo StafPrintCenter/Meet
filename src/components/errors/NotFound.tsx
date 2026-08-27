@@ -31,7 +31,7 @@ export function NotFoundComponent() {
         </div>
 
         {/* Slot Participant 2 */}
-        <div className="hidden relative flex aspect-video flex-col items-center justify-center rounded-2xl border border-border bg-card/40 p-6 text-center backdrop-blur-sm md:flex">
+        <div className="hidden relative aspect-video flex-col items-center justify-center rounded-2xl border border-border bg-card/40 p-6 text-center backdrop-blur-sm md:flex">
           <div className="mb-3 flex h-14 w-14 items-center justify-center rounded-full border border-border bg-muted text-muted-foreground">
             <VideoOff className="h-6 w-6" />
           </div>
