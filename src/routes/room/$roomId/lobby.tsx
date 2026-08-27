@@ -22,6 +22,7 @@ import { findRoom } from "@/lib/meet-data";
 import { isStafEmail, readIdentity, writeIdentity } from "@/lib/meet-session";
 import { cn } from "@/lib/utils";
 import { toast } from "sonner";
+import { SITE, SITE_LINK } from "@/data/site";
 
 export const Route = createFileRoute("/room/$roomId/lobby")({
   head: () => ({
@@ -51,6 +52,8 @@ function Lobby() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [waiting, setWaiting] = useState(false);
+
+  const landingBase = SITE_LINK.landingUrl.replace(/\/$/, "");
 
   useEffect(() => {
     const saved = readIdentity();
@@ -383,9 +386,14 @@ function Lobby() {
               conditions d'utilisation
             </Link>{" "}
             et la{" "}
-            <Link to="/privacy" className="underline underline-offset-2 hover:text-foreground">
-              politique de confidentialité
-            </Link>
+            <a
+              href={`${landingBase}/legal/privacy`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-primary underline underline-offset-4 transition-colors"
+            >
+              Confidentialité
+            </a>
             .
           </p>
         </section>
