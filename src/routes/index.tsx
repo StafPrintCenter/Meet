@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { SiteFooter, SpcLogo, StatusPill } from "@/components/spc/Brand";
-import { HeroSection } from "@/components/pages/home/HeroSection";
+import { HeroSection, DemoRoomsSection, PillarsSection } from "@/components/pages/home";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -30,8 +30,10 @@ function Home() {
         <StatusPill />
       </header>
 
-      <main className="flex-1 flex flex-col justify-center">
+      <main className="flex-1">
         <HeroSection />
+        <DemoRoomsSection />
+        <PillarsSection />
       </main>
 
       <SiteFooter />
