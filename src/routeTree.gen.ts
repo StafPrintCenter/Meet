@@ -13,8 +13,8 @@ import { Route as IndexRouteImport } from './routes/index'
 import { Route as PrivacyRouteImport } from './routes/privacy'
 import { Route as TermsRouteImport } from './routes/terms'
 import { Route as AdminMeetRouteImport } from './routes/admin.meet'
-import { Route as RoomRoomIdIndexRouteImport } from './routes/room.$roomId.index'
-import { Route as RoomRoomIdLobbyRouteImport } from './routes/room.$roomId.lobby'
+import { Route as RoomRoomIdIndexRouteImport } from './routes/room/$roomId.index'
+import { Route as RoomRoomIdLobbyRouteImport } from './routes/room/$roomId.lobby'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
