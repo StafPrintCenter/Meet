@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { SiteFooter, SpcLogo, StatusPill } from "@/components/spc/Brand";
-import { HeroSection, DemoRoomsSection, PillarsSection } from "@/components/pages/home";
+import { HeroSection, DemoRoomsSection, PillarsSection } from "@/components/pages";
 
 export const Route = createFileRoute("/")({
   head: () => ({
