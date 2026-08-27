@@ -1,10 +1,9 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useMemo, useState } from "react";
-import { Activity, Ban, Clock, Link2Off, Radio, ShieldAlert, Users, Video } from "lucide-react";
+import { Activity, Ban, Clock, Link2Off, Radio, Users, Video } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { SpcLogo } from "@/components/site/Brand";
-import { PageFooter } from "@/components/site";
+import { PageHeader, PageFooter } from "@/components/site";
 import { ALL_ROOMS, formatDuration, type Room } from "@/lib/meet-data";
 import { toast } from "sonner";
 
@@ -68,13 +67,7 @@ function AdminMeet() {
 
   return (
     <div className="paper-grid flex min-h-screen flex-col">
-      <header className="mx-auto flex w-full max-w-6xl flex-wrap items-center justify-between gap-3 px-4 py-5">
-        <SpcLogo />
-        <Badge className="rounded-full bg-slate-deep text-primary-foreground">
-          <ShieldAlert className="mr-1 h-3 w-3 text-primary" />
-          Super-Admin
-        </Badge>
-      </header>
+      <PageHeader />
 
       <main className="mx-auto w-full max-w-6xl flex-1 px-4 pb-12">
         <h1 className="font-display text-3xl tracking-tight sm:text-4xl">Supervision SPC Meet</h1>
