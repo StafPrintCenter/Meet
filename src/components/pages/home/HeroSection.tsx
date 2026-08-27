@@ -31,11 +31,6 @@ export function HeroSection() {
 
         {/* COLONNE GAUCHE : Badge, Titre, Description, Formulaire & CTA */}
         <div className="flex flex-col items-start text-left">
-          <span className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-3.5 py-1.5 text-xs font-medium text-muted-foreground shadow-sm">
-            <Video className="h-3.5 w-3.5 text-primary" />
-            Visioconférence & Salons Virtuels
-          </span>
-
           <a
             href={SITE_LINK.landingUrl}
             target="_blank"
@@ -43,7 +38,7 @@ export function HeroSection() {
             className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-3.5 py-1.5 text-xs font-medium text-muted-foreground shadow-sm transition-colors hover:bg-accent hover:text-accent-foreground"
           >
             <Video className="h-3.5 w-3.5 text-primary" />
-            Visioconférence & Salons Virtuels de {SITE.name}
+            Salons Virtuels de {SITE.name}
           </a>
 
           <h1 className="mt-7 text-balance text-4xl font-extralight leading-[1.08] tracking-tight sm:text-6xl">
