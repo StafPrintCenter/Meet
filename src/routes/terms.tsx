@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { SiteFooter, SpcLogo } from "@/components/spc/Brand";
+import { SiteFooter, SpcLogo } from "@/components/site/Brand";
 
 export const Route = createFileRoute("/terms")({
   head: () => ({
