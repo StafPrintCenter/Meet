@@ -1,5 +1,4 @@
-import { Mic, MicOff, Video, ShieldCheck, Users, MonitorUp, PhoneOff } from "lucide-react";
-import { SITE } from "@/data/site";
+import { Mic, MicOff, Video, ShieldCheck, Users, MonitorUp, PhoneOff, Hd } from "lucide-react";
 
 export function MeetPreviewIllustration() {
   return (
@@ -57,21 +56,15 @@ export function MeetPreviewIllustration() {
 
           <div className="flex items-center gap-1 text-[11px] text-muted-foreground">
             <Users className="h-3.5 w-3.5 text-primary" />
-            <span className="font-mono">8</span>
+            <span className="font-mono">8</span> |
+            <Hd className="h-3.5 w-3.5 text-primary" />
+            <span className="font-mono text-[10px]">1080p</span>
           </div>
 
           <div className="flex h-7 w-7 items-center justify-center rounded-md bg-destructive text-destructive-foreground">
             <PhoneOff className="h-3.5 w-3.5" />
           </div>
         </div>
-      </div>
-
-      <div className="mt-3 flex items-center justify-between text-xs text-muted-foreground px-1">
-        <span className="inline-flex items-center gap-1">
-          <ShieldCheck className="h-3.5 w-3.5 text-emerald-500" />
-          {SITE.name} Infrastructure
-        </span>
-        <span className="font-mono text-[10px]">HD 1080p</span>
       </div>
     </div>
   );
