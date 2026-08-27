@@ -3,7 +3,8 @@ import { useMemo, useState } from "react";
 import { Activity, Ban, Clock, Link2Off, Radio, ShieldAlert, Users, Video } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { SiteFooter, SpcLogo } from "@/components/site/Brand";
+import { SpcLogo } from "@/components/site/Brand";
+import { PageFooter } from "@/components/site";
 import { ALL_ROOMS, formatDuration, type Room } from "@/lib/meet-data";
 import { toast } from "sonner";
 
@@ -185,7 +186,7 @@ function AdminMeet() {
         </div>
       </main>
 
-      <SiteFooter />
+      <PageFooter />
     </div>
   );
 }
