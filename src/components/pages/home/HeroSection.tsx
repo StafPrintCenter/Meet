@@ -3,7 +3,7 @@ import { useNavigate, Link } from "@tanstack/react-router";
 import { ArrowRight, KeyRound, Lock, ShieldCheck, Video } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { SITE } from "@/data/site";
+import { SITE, SITE_LINK } from "@/data/site";
 import { DEMO_ROOMS, findRoom } from "@/lib/meet-data";
 import { toast } from "sonner";
 import { MeetPreviewIllustration } from "./MeetPreviewIllustration";
@@ -36,12 +36,23 @@ export function HeroSection() {
             Visioconférence & Salons Virtuels
           </span>
 
-          <h1 className="mt-6 text-balance font-display text-4xl font-extralight leading-[1.1] tracking-tight sm:text-5xl lg:text-6xl">
-            Rejoignez <span className="font-bold text-foreground">STAF PRINT CENTER</span> en une <span className="font-black text-primary">visioconférence fluide.</span>
+          <a
+            href={SITE_LINK.landingUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-3.5 py-1.5 text-xs font-medium text-muted-foreground shadow-sm transition-colors hover:bg-accent hover:text-accent-foreground"
+          >
+            <Video className="h-3.5 w-3.5 text-primary" />
+            Visioconférence & Salons Virtuels de {SITE.name}
+          </a>
+
+          <h1 className="mt-7 text-balance text-4xl font-extralight leading-[1.08] tracking-tight sm:text-6xl">
+            Collaborez avec <span className="font-black">{SITE.name}</span><br />
+            en <span className="text-primary">direct.</span>
           </h1>
 
-          <p className="mt-5 max-w-xl text-balance text-base leading-relaxed text-muted-foreground sm:text-lg">
-            Accédez instantanément à vos réunions, formations et sessions de travail en ligne. Une connexion sécurisée par code d'accès, une haute qualité audio/vidéo et zéro installation requise.
+          <p className="mt-6 max-w-xl text-balance text-base leading-relaxed text-muted-foreground sm:text-lg">
+            Une plateforme simple pour vos réunions, formations et rendez-vous professionnels en visioconférence.
           </p>
 
           {/* Formulaire de Saisie de Code */}
