@@ -32,7 +32,7 @@ export function PageFooter() {
         <nav className="flex items-center gap-4">
           <Link
             to="/terms"
-            className="transition-colors hover:text-foreground">
+            className="hover:text-primary underline underline-offset-4 transition-colors">
             Conditions d'utilisation
           </Link>
           <a
