@@ -10,7 +10,6 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
-import { Route as PrivacyRouteImport } from './routes/privacy'
 import { Route as TermsRouteImport } from './routes/terms'
 import { Route as AdminMeetRouteImport } from './routes/admin.meet'
 import { Route as RoomRoomIdIndexRouteImport } from './routes/room/$roomId/index'
@@ -19,11 +18,6 @@ import { Route as RoomRoomIdLobbyRouteImport } from './routes/room/$roomId/lobby
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const PrivacyRoute = PrivacyRouteImport.update({
-  id: '/privacy',
-  path: '/privacy',
   getParentRoute: () => rootRouteImport,
 } as any)
 const TermsRoute = TermsRouteImport.update({
@@ -49,7 +43,6 @@ const RoomRoomIdLobbyRoute = RoomRoomIdLobbyRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
-  '/privacy': typeof PrivacyRoute
   '/terms': typeof TermsRoute
   '/admin/meet': typeof AdminMeetRoute
   '/room/$roomId/lobby': typeof RoomRoomIdLobbyRoute
@@ -57,7 +50,6 @@ export interface FileRoutesByFullPath {
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
-  '/privacy': typeof PrivacyRoute
   '/terms': typeof TermsRoute
   '/admin/meet': typeof AdminMeetRoute
   '/room/$roomId/lobby': typeof RoomRoomIdLobbyRoute
@@ -66,7 +58,6 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
-  '/privacy': typeof PrivacyRoute
   '/terms': typeof TermsRoute
   '/admin/meet': typeof AdminMeetRoute
   '/room/$roomId/lobby': typeof RoomRoomIdLobbyRoute
@@ -75,24 +66,12 @@ export interface FileRoutesById {
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
-    | '/'
-    | '/privacy'
-    | '/terms'
-    | '/admin/meet'
-    | '/room/$roomId/lobby'
-    | '/room/$roomId/'
+    '/' | '/terms' | '/admin/meet' | '/room/$roomId/lobby' | '/room/$roomId/'
   fileRoutesByTo: FileRoutesByTo
-  to:
-    | '/'
-    | '/privacy'
-    | '/terms'
-    | '/admin/meet'
-    | '/room/$roomId/lobby'
-    | '/room/$roomId'
+  to: '/' | '/terms' | '/admin/meet' | '/room/$roomId/lobby' | '/room/$roomId'
   id:
     | '__root__'
     | '/'
-    | '/privacy'
     | '/terms'
     | '/admin/meet'
     | '/room/$roomId/lobby'
@@ -101,7 +80,6 @@ export interface FileRouteTypes {
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
-  PrivacyRoute: typeof PrivacyRoute
   TermsRoute: typeof TermsRoute
   AdminMeetRoute: typeof AdminMeetRoute
   RoomRoomIdLobbyRoute: typeof RoomRoomIdLobbyRoute
@@ -115,13 +93,6 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/privacy': {
-      id: '/privacy'
-      path: '/privacy'
-      fullPath: '/privacy'
-      preLoaderRoute: typeof PrivacyRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/terms': {
@@ -157,7 +128,6 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
-  PrivacyRoute: PrivacyRoute,
   TermsRoute: TermsRoute,
   AdminMeetRoute: AdminMeetRoute,
   RoomRoomIdLobbyRoute: RoomRoomIdLobbyRoute,
