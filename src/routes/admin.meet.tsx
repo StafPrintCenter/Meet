@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useMemo, useState } from "react";
-import { Activity, Ban, Clock, Link2Off, Radio, Users, Video } from "lucide-react";
+import { Activity, Ban, Clock, Link2Off, Radio, Users, Video, ShieldAlert } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { PageHeader, PageFooter } from "@/components/site";
@@ -67,7 +67,12 @@ function AdminMeet() {
 
   return (
     <div className="paper-grid flex min-h-screen flex-col">
-      <PageHeader />
+      <PageHeader>
+        <Badge className="rounded-full bg-slate-deep text-primary-foreground">
+          <ShieldAlert className="mr-1 h-3 w-3 text-primary" />
+          Super-Admin
+        </Badge>
+      </PageHeader>
 
       <main className="mx-auto w-full max-w-6xl flex-1 px-4 pb-12">
         <h1 className="font-display text-3xl tracking-tight sm:text-4xl">Supervision SPC Meet</h1>
