@@ -42,9 +42,6 @@ export function SiteFooter() {
           <Link to="/terms" className="transition-colors hover:text-foreground">
             Conditions d'utilisation
           </Link>
-          <Link to="/privacy" className="transition-colors hover:text-foreground">
-            Confidentialité
-          </Link>
         </nav>
       </div>
     </footer>
