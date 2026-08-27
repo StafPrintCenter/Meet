@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteFooter, SpcLogo } from "@/components/site/Brand";
+import { PageFooter } from "@/components/site";
 
 export const Route = createFileRoute("/privacy")({
   head: () => ({
