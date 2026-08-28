@@ -15,7 +15,7 @@ export function MeetShell({
   headerContent,
   className,
   mainClassName,
-  gridOpacityClass = "opacity-50",
+  gridOpacityClass = "opacity-80",
 }: MeetShellProps) {
   return (
     <div className={cn("relative min-h-screen bg-background overflow-x-clip text-foreground font-sans", className)}>
