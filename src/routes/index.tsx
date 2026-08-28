@@ -1,7 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { MeetShell } from "@/components/site";
-import { Button } from "@/components/ui/button";
-import { ShieldCheck } from "lucide-react";
 import { HeroSection, DemoRoomsSection, PillarsSection } from "@/components/pages";
 import { SITE } from "@/data/site";
 
