@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { PageHeader, PageFooter } from "@/components/site";
+import { MeetShell } from "@/components/site/MeetShell";
 
 export const Route = createFileRoute("/terms")({
   head: () => ({
@@ -53,33 +53,32 @@ const sections = [
 
 function Terms() {
   return (
-    <div className="paper-grid flex min-h-screen flex-col">
-      <PageHeader>
+    <MeetShell
+      headerContent={
         <Link
           to="/"
           className="text-sm text-muted-foreground transition-colors hover:text-foreground"
         >
           Retour à l'accueil
         </Link>
-      </PageHeader>
+      }
+      mainClassName="mx-auto w-full max-w-3xl px-4 py-8 sm:py-12"
+    >
+      <h1 className="font-display text-3xl tracking-tight sm:text-4xl">
+        Conditions d'utilisation
+      </h1>
+      <p className="mt-2 text-sm text-muted-foreground">
+        Dernière mise à jour : {new Date().toLocaleDateString("fr-FR")}
+      </p>
 
-      <main className="mx-auto w-full max-w-3xl flex-1 px-4 py-8">
-        <h1 className="font-display text-3xl tracking-tight sm:text-4xl">
-          Conditions d'utilisation
-        </h1>
-        <p className="mt-2 text-sm text-muted-foreground">
-          Dernière mise à jour : {new Date().toLocaleDateString("fr-FR")}
-        </p>
-        <div className="surface-card mt-8 space-y-6 rounded-2xl p-6 sm:p-8">
-          {sections.map((s) => (
-            <section key={s.title}>
-              <h2 className="font-display text-lg tracking-tight">{s.title}</h2>
-              <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{s.body}</p>
-            </section>
-          ))}
-        </div>
-      </main>
-      <PageFooter />
-    </div>
+      <div className="surface-card mt-8 space-y-6 rounded-2xl p-6 sm:p-8">
+        {sections.map((s) => (
+          <section key={s.title}>
+            <h2 className="font-display text-lg font-bold text-foreground">{s.title}</h2>
+            <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{s.body}</p>
+          </section>
+        ))}
+      </div>
+    </MeetShell>
   );
 }
