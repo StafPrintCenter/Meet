@@ -1,5 +1,4 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { StatusPill } from "@/components/site/Brand";
 import { PageHeader, PageFooter } from "@/components/site";
 import { HeroSection, DemoRoomsSection, PillarsSection } from "@/components/pages";
 
@@ -27,7 +26,13 @@ function Home() {
   return (
     <div className="paper-grid flex min-h-screen flex-col bg-background font-sans text-foreground">
       <PageHeader>
-        <StatusPill />
+        <span className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-3 py-1.5 text-xs font-medium text-muted-foreground">
+          <span className="relative flex h-2 w-2">
+            <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-success/70" />
+            <span className="relative inline-flex h-2 w-2 rounded-full bg-success" />
+          </span>
+          Systèmes opérationnels
+        </span>
       </PageHeader>
 
       <main className="flex-1">
