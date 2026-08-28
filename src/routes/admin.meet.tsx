@@ -3,7 +3,7 @@ import { useMemo, useState } from "react";
 import { Activity, Ban, Clock, Link2Off, Radio, Users, Video, ShieldAlert } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { PageHeader, PageFooter } from "@/components/site";
+import { MeetShell } from "@/components/site";
 import { ALL_ROOMS, formatDuration, type Room } from "@/lib/meet-data";
 import { toast } from "sonner";
 
