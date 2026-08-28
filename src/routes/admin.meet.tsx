@@ -105,88 +105,89 @@ function AdminMeet() {
         />
       </div>
 
-        <div className="surface-card mt-8 overflow-hidden rounded-2xl">
-          <div className="border-b border-border px-5 py-4">
-            <h2 className="font-display text-lg tracking-tight">Salons</h2>
-          </div>
-          <ul className="divide-y divide-border">
-            {rooms.map((room) => (
-              <li
-                key={room.id}
-                className="flex flex-col gap-3 p-4 transition-colors hover:bg-muted/40 sm:p-5 lg:flex-row lg:items-center lg:justify-between"
-              >
-                <div className="min-w-0">
-                  <div className="flex flex-wrap items-center gap-2">
-                    <p className="font-medium">{room.title}</p>
-                    {room.closed ? (
-                      <Badge variant="destructive" className="rounded-full">
-                        Fermé
-                      </Badge>
-                    ) : room.status === "live" ? (
-                      <Badge className="rounded-full bg-success text-primary-foreground">
-                        En cours
-                      </Badge>
-                    ) : (
-                      <Badge variant="secondary" className="rounded-full">
-                        Planifié
-                      </Badge>
-                    )}
-                    {room.demo && (
-                      <Badge variant="outline" className="rounded-full">
-                        Démo
-                      </Badge>
-                    )}
-                    {room.revoked && (
-                      <Badge variant="outline" className="rounded-full">
-                        Lien révoqué
-                      </Badge>
-                    )}
-                  </div>
-                  <p className="mt-1 text-xs text-muted-foreground">
-                    {room.kind} · Hôte {room.hostName} · Code {room.code} ·{" "}
-                    {room.participants.length}/{room.maxParticipants} participants
-                    {room.status === "live" && !room.closed
-                      ? ` · durée ${formatDuration(Date.now() - room.startedAt)}`
-                      : ""}
-                  </p>
-                </div>
-                <div className="flex flex-wrap items-center gap-2">
-                  {room.demo && !room.closed && (
-                    <Link to="/room/$roomId/lobby" params={{ roomId: room.id }}>
-                      <Button variant="secondary" size="sm" className="rounded-xl">
-                        <Video className="mr-1 h-3.5 w-3.5" />
-                        Ouvrir
-                      </Button>
-                    </Link>
-                  )}
-                  <Button
-                    variant="outline"
-                    size="sm"
-                    className="rounded-xl"
-                    onClick={() => revoke(room.id)}
-                  >
-                    <Link2Off className="mr-1 h-3.5 w-3.5" />
-                    Révoquer le lien
-                  </Button>
-                  <Button
-                    variant="destructive"
-                    size="sm"
-                    className="rounded-xl"
-                    disabled={room.closed}
-                    onClick={() => stop(room.id)}
-                  >
-                    <Ban className="mr-1 h-3.5 w-3.5" />
-                    Arrêter
-                  </Button>
-                </div>
-              </li>
-            ))}
-          </ul>
+      <div className="surface-card mt-8 overflow-hidden rounded-2xl">
+        <div className="border-b border-border bg-muted/60 px-5 py-4">
+          <h2 className="font-display text-lg font-bold text-foreground">Salons actifs et programmés</h2>
         </div>
-      </main>
+        <ul className="divide-y divide-border">
+          {rooms.map((room) => (
+            <li
+              key={room.id}
+              className="flex flex-col gap-4 p-4 transition-colors hover:bg-muted/40 sm:p-5 lg:flex-row lg:items-center lg:justify-between"
+            >
+              <div className="min-w-0">
+                <div className="flex flex-wrap items-center gap-2">
+                  <p className="font-medium">{room.title}</p>
+                  {room.closed ? (
+                    <Badge variant="destructive" className="rounded-full">
+                      Fermé
+                    </Badge>
+                  ) : room.status === "live" ? (
+                    <Badge className="rounded-full bg-success text-primary-foreground">
+                      En cours
+                    </Badge>
+                  ) : (
+                    <Badge variant="secondary" className="rounded-full">
+                      Planifié
+                    </Badge>
+                  )}
+                  {room.demo && (
+                    <Badge variant="outline" className="rounded-full">
+                      Démo
+                    </Badge>
+                  )}
+                  {room.revoked && (
+                    <Badge variant="outline" className="rounded-full">
+                      Lien révoqué
+                    </Badge>
+                  )}
+                </div>
+                <p className="mt-1 text-xs text-muted-foreground">
+                  {room.kind} · Hôte : <span className="font-bold">{room.hostName}</span> · Code :{" "}
+                  <code className="rounded border border-border bg-muted px-1.5 py-0.5 font-mono font-bold">
+                    {room.code}
+                  </code>{" "}
+                  · {room.participants.length}/{room.maxParticipants} participants
+                  {room.status === "live" && !room.closed
+                    ? ` · Durée : ${formatDuration(Date.now() - room.startedAt)}`
+                    : ""}
+                </p>
+              </div>
 
-      <PageFooter />
-    </div>
+              <div className="flex flex-wrap items-center gap-2">
+                {room.demo && !room.closed && (
+                  <Link to="/room/$roomId/lobby" params={{ roomId: room.id }}>
+                    <Button variant="secondary" size="sm" className="rounded-xl border border-border">
+                      <Video className="mr-1 h-3.5 w-3.5" />
+                      Ouvrir
+                    </Button>
+                  </Link>
+                )}
+                <Button
+                  variant="outline"
+                  size="sm"
+                  className="rounded-xl"
+                  onClick={() => revoke(room.id)}
+                >
+                  <Link2Off className="mr-1.5 h-3.5 w-3.5 text-amber-600" />
+                  Révoquer le lien
+                </Button>
+                <Button
+                  variant="destructive"
+                  size="sm"
+                  className="rounded-xl"
+                  disabled={room.closed}
+                  onClick={() => stop(room.id)}
+                >
+                  <Ban className="mr-1 h-3.5 w-3.5" />
+                  Arrêter
+                </Button>
+              </div>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </MeetShell>
   );
 }
 
