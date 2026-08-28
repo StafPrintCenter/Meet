@@ -313,7 +313,7 @@ function Lobby() {
             </div>
           </div>
 
-        </section>
+      </section>
 
         <section className="surface-card h-fit rounded-2xl p-5 sm:p-6">
           <h1 className="font-display text-2xl leading-tight tracking-tight">{room.title}</h1>
