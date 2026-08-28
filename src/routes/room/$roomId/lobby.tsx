@@ -76,19 +76,22 @@ function Lobby() {
 
   if (!room) {
     return (
-      <div className="paper-grid flex min-h-screen flex-col items-center justify-center gap-4 px-4 text-center">
-        <AlertTriangle className="h-8 w-8 text-destructive" />
-        <h1 className="mt-4 font-display text-2xl font-bold text-foreground">Salon introuvable</h1>
-        <p className="max-w-sm text-sm text-muted-foreground">
-          Ce lien est peut-être expiré ou révoqué. Demandez un nouveau lien d'invitation à votre
-          hôte.
-        </p>
-        <Link to="/">
-          <Button variant="outline" className="rounded-xl">
-            Retour à l'accueil
-          </Button>
-        </Link>
-      </div>
+      <MeetShell mainClassName="flex items-center justify-center p-4">
+        <div className="flex max-w-md flex-col items-center rounded-2xl border border-border bg-card p-6 text-center shadow-sm">
+          <div className="flex h-12 w-12 items-center justify-center rounded-full bg-destructive/10 text-destructive">
+            <AlertTriangle className="h-6 w-6" />
+          </div>
+          <h1 className="mt-4 font-display text-2xl font-bold text-foreground">Salon introuvable</h1>
+          <p className="max-w-sm text-sm text-muted-foreground">
+            Ce lien est peut-être expiré ou révoqué. Demandez un nouveau lien d'invitation à votre hôte.
+          </p>
+          <Link to="/" className="mt-6 w-full sm:w-auto">
+            <Button variant="outline" className="w-full rounded-xl border-border font-semibold">
+              Retour à l'accueil
+            </Button>
+          </Link>
+        </div>
+      </MeetShell>
     );
   }
 
