@@ -31,16 +31,14 @@ function Home() {
           </span>
           Systèmes opérationnels
         </span>
-      </PageHeader>
-
-      <main className="relative flex-1 overflow-hidden">
-        {/* Calque de fond quadrillé avec grille atténuée au centre */}
-        <div className="pointer-events-none absolute inset-0 paper-grid opacity-70" />
-
-        <div className="relative z-10">
-          <HeroSection />
-          <DemoRoomsSection />
-          <PillarsSection />
+      }
+      mainClassName="overflow-hidden"
+    >
+      <div className="pointer-events-none absolute inset-0 paper-grid opacity-70" />
+      <div className="relative z-10">
+        <HeroSection />
+        <DemoRoomsSection />
+        <PillarsSection />
 
           {/* Actions secondaires */}
           <div className="mt-5 flex flex-col items-start gap-3 w-full sm:flex-row sm:items-center">
