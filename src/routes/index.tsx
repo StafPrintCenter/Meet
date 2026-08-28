@@ -32,22 +32,9 @@ function Home() {
       }
       mainClassName="overflow-hidden"
     >
-      <div className="pointer-events-none absolute inset-0 paper-grid opacity-70" />
-      <div className="relative z-10">
-        <HeroSection />
-        <DemoRoomsSection />
-        <PillarsSection />
-
-        {/* Actions secondaires & Garanties */}
-        <div className="mx-auto mb-4 max-w-xl px-4">
-          <Link to="/admin/meet" className="w-full sm:w-auto">
-            <Button variant="outline" size="lg" className="h-11 w-full rounded-xl border-border/80 bg-background hover:bg-accent sm:w-auto">
-              <ShieldCheck className="mr-2 h-4 w-4 text-primary" />
-              Espace Staff & Formateurs
-            </Button>
-          </Link>
-        </div>
-      </div>
+      <HeroSection />
+      <DemoRoomsSection />
+      <PillarsSection />
     </MeetShell>
   );
 }
