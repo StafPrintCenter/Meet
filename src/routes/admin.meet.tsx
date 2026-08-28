@@ -81,28 +81,28 @@ function AdminMeet() {
           fermeture et de révocation de liens.
         </p>
 
-        <div className="mt-6 grid grid-cols-2 gap-3 lg:grid-cols-4">
-          <StatCard
-            icon={<Radio className="h-4 w-4 text-emerald-600" />}
-            label="Salons en cours"
-            value={String(stats.live)}
-          />
-          <StatCard
-            icon={<Users className="h-4 w-4" />}
-            label="Participants actifs"
-            value={String(stats.participants)}
-          />
-          <StatCard
-            icon={<Clock className="h-4 w-4" />}
-            label="Réunions planifiées"
-            value={String(stats.scheduled)}
-          />
-          <StatCard
-            icon={<Activity className="h-4 w-4" />}
-            label="Bande passante"
-            value={`${stats.bandwidth} Mb/s`}
-          />
-        </div>
+      <div className="mt-6 grid grid-cols-2 gap-3 lg:grid-cols-4">
+        <StatCard
+          icon={<Radio className="h-4 w-4 text-emerald-600" />}
+          label="Salons en cours"
+          value={String(stats.live)}
+        />
+        <StatCard
+          icon={<Users className="h-4 w-4 text-primary" />}
+          label="Participants actifs"
+          value={String(stats.participants)}
+        />
+        <StatCard
+          icon={<Clock className="h-4 w-4 text-amber-600" />}
+          label="Réunions planifiées"
+          value={String(stats.scheduled)}
+        />
+        <StatCard
+          icon={<Activity className="h-4 w-4 text-indigo-600" />}
+          label="Bande passante"
+          value={`${stats.bandwidth} Mb/s`}
+        />
+      </div>
 
         <div className="surface-card mt-8 overflow-hidden rounded-2xl">
           <div className="border-b border-border px-5 py-4">
