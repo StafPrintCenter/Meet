@@ -74,9 +74,9 @@ export function HeroSection() {
             </div>
           </form>
 
-          <div className="mt-10 flex items-center gap-2 text-xs font-medium text-muted-foreground">
+          <div className="mt-4 flex items-center gap-2 text-xs font-medium text-muted-foreground">
             <Lock className="h-3.5 w-3.5 text-success" />
-            Domaine restreint · Aucun lien externe accepté
+            Salons protégés & chiffrés
           </div>
         </div>
 
