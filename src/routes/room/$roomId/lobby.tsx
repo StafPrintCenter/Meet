@@ -198,21 +198,21 @@ function Lobby() {
               <span className="ml-2">{media.camOn ? "Caméra active" : "Caméra coupée"}</span>
             </Button>
 
-            <div className="flex flex-1 items-center gap-2 rounded-xl border border-border bg-card px-3 py-2">
-              <Mic className="h-4 w-4 shrink-0 text-muted-foreground" />
-              <div className="flex h-3 flex-1 items-center gap-1">
-                {Array.from({ length: 14 }).map((_, i) => (
-                  <span
-                    key={i}
-                    className={cn(
-                      "h-2.5 flex-1 rounded-full transition-colors",
-                      media.micOn && media.level * 16 > i ? "bg-primary" : "bg-muted",
-                    )}
-                  />
-                ))}
-              </div>
+          <div className="flex flex-1 items-center gap-2 rounded-xl border border-border bg-card px-3 py-2 shadow-sm">
+            <Mic className="h-4 w-4 shrink-0 text-foreground" />
+            <div className="flex h-3 flex-1 items-center gap-1">
+              {Array.from({ length: 14 }).map((_, i) => (
+                <span
+                  key={i}
+                  className={cn(
+                    "h-2.5 flex-1 rounded-full transition-colors",
+                    media.micOn && media.level * 16 > i ? "bg-primary" : "bg-muted-foreground/30",
+                  )}
+                />
+              ))}
             </div>
           </div>
+        </div>
 
           {media.error && (
             <div className="mt-4 flex items-start gap-3 rounded-xl border border-destructive/30 bg-destructive/5 p-3 text-sm">
