@@ -72,9 +72,9 @@ function AdminMeet() {
           <ShieldAlert className="mr-1 h-3 w-3 text-primary" />
           Super-Admin
         </Badge>
-      </PageHeader>
-
-      <main className="mx-auto w-full max-w-6xl flex-1 px-4 py-12">
+      }
+      mainClassName="mx-auto w-full max-w-6xl flex-1 px-4 py-8">
+      <div>
         <h1 className="font-display text-3xl tracking-tight sm:text-4xl">Supervision SPC Meet</h1>
         <p className="mt-2 max-w-2xl text-sm text-muted-foreground">
           Vue temps réel des salons de visioconférence STAF PRINT CENTER, avec actions d'urgence de
