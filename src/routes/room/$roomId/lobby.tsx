@@ -381,26 +381,23 @@ function Lobby() {
           </Button>
         </form>
 
-          <p className="mt-4 text-xs text-muted-foreground">
-            En rejoignant, vous acceptez les{" "}
-            <Link to="/terms" className="underline underline-offset-2 hover:text-foreground">
-              conditions d'utilisation
-            </Link>{" "}
-            et la{" "}
-            <a
-              href={`${landingBase}/legal/privacy`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:text-primary underline underline-offset-4 transition-colors"
-            >
-              Confidentialité
-            </a>
-            .
-          </p>
-        </section>
-      </main>
-
-      <PageFooter />
-    </div>
+        <p className="mt-4 text-xs text-muted-foreground">
+          En rejoignant, vous acceptez les{" "}
+          <Link to="/terms" className="underline underline-offset-2 hover:text-foreground">
+            conditions d'utilisation
+          </Link>{" "}
+          et la{" "}
+          <a
+            href={`${landingBase}/legal/privacy`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-primary underline underline-offset-4 transition-colors"
+          >
+            Confidentialité
+          </a>
+          .
+        </p>
+      </section>
+    </MeetShell>
   );
 }
