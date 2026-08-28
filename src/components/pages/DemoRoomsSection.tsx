@@ -38,6 +38,20 @@ export function DemoRoomsSection() {
           ))}
         </div>
       </div>
+
+      {/* Action secondaire */}
+      <div className="flex justify-center">
+        <Link to="/admin/meet" className="w-full sm:w-auto">
+          <Button
+            variant="outline"
+            size="lg"
+            className="h-11 w-full rounded-xl border-border/80 bg-background hover:bg-accent sm:w-auto font-semibold"
+          >
+            <ShieldCheck className="mr-2 h-4 w-4 text-primary" />
+            Espace Staff & Formateurs
+          </Button>
+        </Link>
+      </div>
     </div>
   );
 }
