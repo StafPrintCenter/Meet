@@ -161,42 +161,42 @@ function Lobby() {
         : "Personnel STAF PRINT uniquement";
 
   return (
-    <div className="paper-grid min-h-screen">
-      <PageHeader>
-        <Badge variant="secondary" className="rounded-full">
+    <MeetShell
+      headerContent={
+        <Badge variant="secondary" className="rounded-full font-bold">
           {room.kind}
         </Badge>
-      </PageHeader>
+      }
+      mainClassName="mx-auto grid w-full max-w-6xl gap-8 px-4 py-8 sm:py-12 lg:grid-cols-[1.3fr_1fr]"
+    >
+      <section className="flex flex-col gap-4">
+        <VideoTile
+          name={name.trim() || "Vous"}
+          role="guest"
+          micOn={media.micOn}
+          camOn={media.camOn}
+          stream={media.stream}
+          mirrored
+          isSelf
+        />
 
-      <main className="mx-auto grid w-full max-w-6xl gap-6 px-4 py-12 lg:grid-cols-[1.3fr_1fr]">
-        <section>
-          <VideoTile
-            name={name.trim() || "Vous"}
-            role="guest"
-            micOn={media.micOn}
-            camOn={media.camOn}
-            stream={media.stream}
-            mirrored
-            isSelf
-          />
-
-          <div className="mt-4 flex flex-wrap items-center gap-3">
-            <Button
-              variant={media.micOn ? "secondary" : "destructive"}
-              onClick={media.toggleMic}
-              className="rounded-xl"
-            >
-              {media.micOn ? <Mic className="h-4 w-4" /> : <MicOff className="h-4 w-4" />}
-              <span className="ml-2">{media.micOn ? "Micro actif" : "Micro coupé"}</span>
-            </Button>
-            <Button
-              variant={media.camOn ? "secondary" : "destructive"}
-              onClick={media.toggleCam}
-              className="rounded-xl"
-            >
-              {media.camOn ? <VideoIcon className="h-4 w-4" /> : <VideoOff className="h-4 w-4" />}
-              <span className="ml-2">{media.camOn ? "Caméra active" : "Caméra coupée"}</span>
-            </Button>
+        <div className="flex flex-wrap items-center gap-3">
+          <Button
+            variant={media.micOn ? "secondary" : "destructive"}
+            onClick={media.toggleMic}
+            className="rounded-xl border border-border"
+          >
+            {media.micOn ? <Mic className="h-4 w-4" /> : <MicOff className="h-4 w-4" />}
+            <span className="ml-2">{media.micOn ? "Micro actif" : "Micro coupé"}</span>
+          </Button>
+          <Button
+            variant={media.camOn ? "secondary" : "destructive"}
+            onClick={media.toggleCam}
+            className="rounded-xl border border-border"
+          >
+            {media.camOn ? <VideoIcon className="h-4 w-4" /> : <VideoOff className="h-4 w-4" />}
+            <span className="ml-2">{media.camOn ? "Caméra active" : "Caméra coupée"}</span>
+          </Button>
 
           <div className="flex flex-1 items-center gap-2 rounded-xl border border-border bg-card px-3 py-2 shadow-sm">
             <Mic className="h-4 w-4 shrink-0 text-foreground" />
@@ -314,11 +314,11 @@ function Lobby() {
         </div>
       </section>
 
-        <section className="surface-card h-fit rounded-2xl p-5 sm:p-6">
-          <h1 className="font-display text-2xl leading-tight tracking-tight">{room.title}</h1>
-          <p className="mt-1 text-sm text-muted-foreground">
-            Hôte : {room.hostName} · Code {room.code}
-          </p>
+      <section className="surface-card h-fit rounded-2xl p-5 sm:p-6">
+        <h1 className="font-display text-2xl leading-tight tracking-tight">{room.title}</h1>
+        <p className="mt-1 text-sm text-muted-foreground">
+          Hôte : {room.hostName} · Code {room.code}
+        </p>
 
         <div className="mt-4 flex flex-wrap gap-2 text-xs">
           <Badge variant="outline" className="rounded-full">
