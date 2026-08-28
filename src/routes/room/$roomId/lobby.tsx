@@ -78,7 +78,7 @@ function Lobby() {
     return (
       <div className="paper-grid flex min-h-screen flex-col items-center justify-center gap-4 px-4 text-center">
         <AlertTriangle className="h-8 w-8 text-destructive" />
-        <h1 className="font-display text-2xl">Salon introuvable</h1>
+        <h1 className="mt-4 font-display text-2xl font-bold text-foreground">Salon introuvable</h1>
         <p className="max-w-sm text-sm text-muted-foreground">
           Ce lien est peut-être expiré ou révoqué. Demandez un nouveau lien d'invitation à votre
           hôte.
