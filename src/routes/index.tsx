@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { MeetShell } from "@/components/site";
 import { Button } from "@/components/ui/button";
-import { Lock, ShieldCheck } from "lucide-react";
+import { ShieldCheck } from "lucide-react";
 import { HeroSection, DemoRoomsSection, PillarsSection } from "@/components/pages";
 import { SITE } from "@/data/site";
 
@@ -42,21 +42,12 @@ function Home() {
 
         {/* Actions secondaires & Garanties */}
         <div className="mx-auto mb-4 max-w-xl px-4">
-          <div className="flex flex-col items-center justify-between gap-4 rounded-2xl border border-border/60 bg-card/80 p-4 backdrop-blur-sm sm:flex-row">
-            <Link to="/admin/meet" className="w-full sm:w-auto">
-              <Button variant="outline" size="lg" className="h-11 w-full rounded-xl border-border/80 bg-background hover:bg-accent sm:w-auto">
-                <ShieldCheck className="mr-2 h-4 w-4 text-primary" />
-                Espace Staff & Formateurs
-              </Button>
-            </Link>
-
-            <div className="flex items-center gap-2 text-xs font-medium text-muted-foreground">
-              <span className="flex h-6 w-6 items-center justify-center rounded-full bg-emerald-500/10">
-                <Lock className="h-3.5 w-3.5 text-emerald-500" />
-              </span>
-              Salons protégés & chiffrés
-            </div>
-          </div>
+          <Link to="/admin/meet" className="w-full sm:w-auto">
+            <Button variant="outline" size="lg" className="h-11 w-full rounded-xl border-border/80 bg-background hover:bg-accent sm:w-auto">
+              <ShieldCheck className="mr-2 h-4 w-4 text-primary" />
+              Espace Staff & Formateurs
+            </Button>
+          </Link>
         </div>
       </div>
     </MeetShell>
