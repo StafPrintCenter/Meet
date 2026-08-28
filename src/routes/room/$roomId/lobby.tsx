@@ -320,21 +320,21 @@ function Lobby() {
             Hôte : {room.hostName} · Code {room.code}
           </p>
 
-          <div className="mt-4 flex flex-wrap gap-2 text-xs">
-            <Badge variant="outline" className="rounded-full">
-              <ShieldCheck className="mr-1 h-3 w-3" />
-              {accessLabel}
+        <div className="mt-4 flex flex-wrap gap-2 text-xs">
+          <Badge variant="outline" className="rounded-full">
+            <ShieldCheck className="mr-1 h-3 w-3" />
+            {accessLabel}
+          </Badge>
+          <Badge variant="outline" className="rounded-full">
+            <Users className="mr-1 h-3 w-3" />
+            {room.participants.length}/{room.maxParticipants} places
+          </Badge>
+          {room.lobbyEnabled && (
+            <Badge className="rounded-full bg-warning text-slate-deep">
+              Salle d'attente active
             </Badge>
-            <Badge variant="outline" className="rounded-full">
-              <Users className="mr-1 h-3 w-3" />
-              {room.participants.length}/{room.maxParticipants} places
-            </Badge>
-            {room.lobbyEnabled && (
-              <Badge className="rounded-full bg-warning text-slate-deep">
-                Salle d'attente active
-              </Badge>
-            )}
-          </div>
+          )}
+        </div>
 
           <form onSubmit={submit} className="mt-6 space-y-4">
             <div>
