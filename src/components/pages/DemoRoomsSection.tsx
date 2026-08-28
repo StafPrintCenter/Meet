@@ -5,7 +5,7 @@ import { DEMO_ROOMS } from "@/lib/meet-data";
 
 export function DemoRoomsSection() {
   return (
-    <div className="mx-auto max-w-6xl px-6 pb-12 w-full">
+    <div className="mx-auto max-w-6xl px-6 pb-12 w-full space-y-6">
       <div className="w-full rounded-2xl border border-dashed border-border bg-card/40 p-5 backdrop-blur-sm">
         <div className="mb-4 flex flex-col justify-between gap-2 sm:flex-row sm:items-center">
           <p className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-muted-foreground">
