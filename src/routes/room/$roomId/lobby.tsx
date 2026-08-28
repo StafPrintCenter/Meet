@@ -336,35 +336,35 @@ function Lobby() {
           )}
         </div>
 
-          <form onSubmit={submit} className="mt-6 space-y-4">
+        <form onSubmit={submit} className="mt-6 space-y-4">
+          <div>
+            <Label htmlFor="name">Nom d'affichage</Label>
+            <Input
+              id="name"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              placeholder="Ex. Karim Toure"
+              className="mt-1.5 h-11 rounded-xl"
+              maxLength={60}
+            />
+          </div>
+          {needsEmail && (
             <div>
-              <Label htmlFor="name">Nom d'affichage</Label>
+              <Label htmlFor="email">
+                Email{" "}
+                {room.accessMode === "staff" ? "professionnel (@stafprint.com)" : "autorisé"}
+              </Label>
               <Input
-                id="name"
-                value={name}
-                onChange={(e) => setName(e.target.value)}
-                placeholder="Ex. Karim Toure"
+                id="email"
+                type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                placeholder="prenom.nom@stafprint.com"
                 className="mt-1.5 h-11 rounded-xl"
-                maxLength={60}
+                maxLength={120}
               />
             </div>
-            {needsEmail && (
-              <div>
-                <Label htmlFor="email">
-                  Email{" "}
-                  {room.accessMode === "staff" ? "professionnel (@stafprint.com)" : "autorisé"}
-                </Label>
-                <Input
-                  id="email"
-                  type="email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  placeholder="prenom.nom@stafprint.com"
-                  className="mt-1.5 h-11 rounded-xl"
-                  maxLength={120}
-                />
-              </div>
-            )}
+          )}
 
             <Button
               type="submit"
