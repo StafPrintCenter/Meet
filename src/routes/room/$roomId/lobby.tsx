@@ -15,13 +15,13 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Badge } from "@/components/ui/badge";
-import { SpcLogo } from "@/components/site/Brand";
 import { VideoTile } from "@/components/meet/VideoTile";
 import { useLocalMedia } from "@/hooks/useLocalMedia";
 import { findRoom } from "@/lib/meet-data";
 import { isStafEmail, readIdentity, writeIdentity } from "@/lib/meet-session";
 import { cn } from "@/lib/utils";
 import { toast } from "sonner";
+import { PageHeader, PageFooter } from "@/components/site";
 import { SITE, SITE_LINK } from "@/data/site";
 
 export const Route = createFileRoute("/room/$roomId/lobby")({
@@ -159,14 +159,13 @@ function Lobby() {
 
   return (
     <div className="paper-grid min-h-screen">
-      <header className="mx-auto flex w-full max-w-6xl items-center justify-between px-4 py-5">
-        <SpcLogo />
+      <PageHeader>
         <Badge variant="secondary" className="rounded-full">
           {room.kind}
         </Badge>
-      </header>
+      </PageHeader>
 
-      <main className="mx-auto grid w-full max-w-6xl gap-6 px-4 pb-12 lg:grid-cols-[1.3fr_1fr]">
+      <main className="mx-auto grid w-full max-w-6xl gap-6 px-4 py-12 lg:grid-cols-[1.3fr_1fr]">
         <section>
           <VideoTile
             name={name.trim() || "Vous"}
@@ -398,6 +397,8 @@ function Lobby() {
           </p>
         </section>
       </main>
+
+      <PageFooter />
     </div>
   );
 }
