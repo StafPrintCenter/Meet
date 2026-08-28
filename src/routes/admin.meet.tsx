@@ -113,7 +113,7 @@ function AdminMeet() {
             {rooms.map((room) => (
               <li
                 key={room.id}
-                className="flex flex-col gap-3 p-4 sm:p-5 lg:flex-row lg:items-center lg:justify-between"
+                className="flex flex-col gap-3 p-4 transition-colors hover:bg-muted/40 sm:p-5 lg:flex-row lg:items-center lg:justify-between"
               >
                 <div className="min-w-0">
                   <div className="flex flex-wrap items-center gap-2">
