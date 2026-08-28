@@ -54,9 +54,7 @@ function Home() {
             </div>
           </div>
         </div>
-      </main>
-
-      <PageFooter />
-    </div>
+      </div>
+    </MeetShell>
   );
 }
