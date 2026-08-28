@@ -137,6 +137,8 @@
     color: var(--color-foreground);
     font-family: var(--font-sans);
     font-feature-settings: "cv11", "ss01";
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
   }
 
   h1,
@@ -144,7 +146,7 @@
   h3,
   h4 {
     font-family: var(--font-display);
-    font-optical-sizing: auto;
+    letter-spacing: -0.02em;
   }
 }
 
