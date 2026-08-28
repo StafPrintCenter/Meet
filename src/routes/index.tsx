@@ -33,10 +33,14 @@ function Home() {
         </span>
       </PageHeader>
 
-      <main className="flex-1">
-        <HeroSection />
-        <DemoRoomsSection />
-        <PillarsSection />
+      <main className="relative flex-1 overflow-hidden">
+        {/* Calque de fond quadrillé avec grille atténuée au centre */}
+        <div className="pointer-events-none absolute inset-0 paper-grid opacity-70" />
+
+        <div className="relative z-10">
+          <HeroSection />
+          <DemoRoomsSection />
+          <PillarsSection />
 
 
         {/* Actions secondaires */}
