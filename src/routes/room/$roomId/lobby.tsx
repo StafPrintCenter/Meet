@@ -214,22 +214,22 @@ function Lobby() {
           </div>
         </div>
 
-          {media.error && (
-            <div className="mt-4 flex items-start gap-3 rounded-xl border border-destructive/30 bg-destructive/5 p-3 text-sm">
-              <AlertTriangle className="mt-0.5 h-4 w-4 shrink-0 text-destructive" />
-              <div>
-                <p>{media.error}</p>
-                <Button
-                  variant="outline"
-                  size="sm"
-                  className="mt-2 rounded-lg"
-                  onClick={media.retry}
-                >
-                  Réessayer
-                </Button>
-              </div>
+        {media.error && (
+          <div className="mt-4 flex items-start gap-3 rounded-xl border border-destructive/30 bg-destructive/5 p-3 text-sm">
+            <AlertTriangle className="mt-0.5 h-4 w-4 shrink-0 text-destructive" />
+            <div>
+              <p>{media.error}</p>
+              <Button
+                variant="outline"
+                size="sm"
+                className="mt-2 rounded-lg"
+                onClick={media.retry}
+              >
+                Réessayer
+              </Button>
             </div>
-          )}
+          </div>
+        )}
 
           <div className="mt-4 grid gap-3 sm:grid-cols-3">
             <div>
