@@ -80,6 +80,7 @@ function AdminMeet() {
           Vue temps réel des salons de visioconférence STAF PRINT CENTER, avec actions d'urgence de
           fermeture et de révocation de liens.
         </p>
+      </div>
 
       <div className="mt-6 grid grid-cols-2 gap-3 lg:grid-cols-4">
         <StatCard
