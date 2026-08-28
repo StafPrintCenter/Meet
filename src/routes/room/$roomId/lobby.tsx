@@ -231,88 +231,87 @@ function Lobby() {
           </div>
         )}
 
-          <div className="grid gap-3 rounded-2xl border border-border bg-card p-4 sm:grid-cols-3">
-            <div>
-              <Label htmlFor="audio-src" className="text-xs text-muted-foreground">
-                Microphone
-              </Label>
-              <select
-                id="audio-src"
-                value={media.audioDeviceId ?? media.devices.audio[0]?.deviceId ?? ""}
-                onChange={(e) => media.setAudioDeviceId(e.target.value)}
-                className="mt-1.5 h-11 w-full rounded-xl border border-input bg-card px-3 text-sm"
-              >
-                {media.devices.audio.length === 0 && (
-                  <option value="">Périphérique par défaut</option>
-                )}
-                {media.devices.audio.map((d, i) => (
-                  <option key={d.deviceId || i} value={d.deviceId}>
-                    {d.label || `Micro ${i + 1}`}
-                  </option>
-                ))}
-              </select>
-            </div>
-            <div>
-              <Label htmlFor="video-src" className="text-xs text-muted-foreground">
-                Caméra
-              </Label>
-              <select
-                id="video-src"
-                value={media.videoDeviceId ?? media.devices.video[0]?.deviceId ?? ""}
-                onChange={(e) => media.setVideoDeviceId(e.target.value)}
-                className="mt-1.5 h-11 w-full rounded-xl border border-input bg-card px-3 text-sm"
-              >
-                {media.devices.video.length === 0 && (
-                  <option value="">Périphérique par défaut</option>
-                )}
-                {media.devices.video.map((d, i) => (
-                  <option key={d.deviceId || i} value={d.deviceId}>
-                    {d.label || `Caméra ${i + 1}`}
-                  </option>
-                ))}
-              </select>
-            </div>
-            <div>
-              <Label htmlFor="output-src" className="text-xs text-muted-foreground">
-                Sortie audio (haut-parleur)
-              </Label>
-              <select
-                id="output-src"
-                value={media.outputDeviceId ?? media.devices.output[0]?.deviceId ?? ""}
-                onChange={(e) => media.setOutputDeviceId(e.target.value)}
-                className="mt-1.5 h-11 w-full rounded-xl border border-input bg-card px-3 text-sm"
-              >
-                {media.devices.output.length === 0 && (
-                  <option value="">Sortie système par défaut</option>
-                )}
-                {media.devices.output.map((d, i) => (
-                  <option key={d.deviceId || i} value={d.deviceId}>
-                    {d.label || `Sortie ${i + 1}`}
-                  </option>
-                ))}
-              </select>
-              <Button
-                type="button"
-                variant="outline"
-                size="sm"
-                className="mt-2 w-full rounded-lg"
-                onClick={async () => {
-                  const ok = await media.testOutput();
-                  if (ok) toast.success("Bip de test envoyé sur la sortie sélectionnée.");
-                  else toast.error("Test audio impossible sur ce navigateur.");
-                }}
-              >
-                <Volume2 className="mr-2 h-4 w-4" />
-                Tester le son
-              </Button>
-              {!media.supportsOutputSelection && (
-                <p className="mt-1.5 text-[11px] text-muted-foreground">
-                  Ce navigateur utilise la sortie audio définie par le système.
-                </p>
+        <div className="grid gap-3 rounded-2xl border border-border bg-card p-4 sm:grid-cols-3">
+          <div>
+            <Label htmlFor="audio-src" className="text-xs text-muted-foreground">
+              Microphone
+            </Label>
+            <select
+              id="audio-src"
+              value={media.audioDeviceId ?? media.devices.audio[0]?.deviceId ?? ""}
+              onChange={(e) => media.setAudioDeviceId(e.target.value)}
+              className="mt-1.5 h-11 w-full rounded-xl border border-input bg-card px-3 text-sm"
+            >
+              {media.devices.audio.length === 0 && (
+                <option value="">Périphérique par défaut</option>
               )}
-            </div>
+              {media.devices.audio.map((d, i) => (
+                <option key={d.deviceId || i} value={d.deviceId}>
+                  {d.label || `Micro ${i + 1}`}
+                </option>
+              ))}
+            </select>
           </div>
-
+          <div>
+            <Label htmlFor="video-src" className="text-xs text-muted-foreground">
+              Caméra
+            </Label>
+            <select
+              id="video-src"
+              value={media.videoDeviceId ?? media.devices.video[0]?.deviceId ?? ""}
+              onChange={(e) => media.setVideoDeviceId(e.target.value)}
+              className="mt-1.5 h-11 w-full rounded-xl border border-input bg-card px-3 text-sm"
+            >
+              {media.devices.video.length === 0 && (
+                <option value="">Périphérique par défaut</option>
+              )}
+              {media.devices.video.map((d, i) => (
+                <option key={d.deviceId || i} value={d.deviceId}>
+                  {d.label || `Caméra ${i + 1}`}
+                </option>
+              ))}
+            </select>
+          </div>
+          <div>
+            <Label htmlFor="output-src" className="text-xs text-muted-foreground">
+              Sortie audio (haut-parleur)
+            </Label>
+            <select
+              id="output-src"
+              value={media.outputDeviceId ?? media.devices.output[0]?.deviceId ?? ""}
+              onChange={(e) => media.setOutputDeviceId(e.target.value)}
+              className="mt-1.5 h-11 w-full rounded-xl border border-input bg-card px-3 text-sm"
+            >
+              {media.devices.output.length === 0 && (
+                <option value="">Sortie système par défaut</option>
+              )}
+              {media.devices.output.map((d, i) => (
+                <option key={d.deviceId || i} value={d.deviceId}>
+                  {d.label || `Sortie ${i + 1}`}
+                </option>
+              ))}
+            </select>
+            <Button
+              type="button"
+              variant="outline"
+              size="sm"
+              className="mt-2 w-full rounded-lg"
+              onClick={async () => {
+                const ok = await media.testOutput();
+                if (ok) toast.success("Bip de test envoyé sur la sortie sélectionnée.");
+                else toast.error("Test audio impossible sur ce navigateur.");
+              }}
+            >
+              <Volume2 className="mr-2 h-4 w-4" />
+              Tester le son
+            </Button>
+            {!media.supportsOutputSelection && (
+              <p className="mt-1.5 text-[11px] text-muted-foreground">
+                Ce navigateur utilise la sortie audio définie par le système.
+              </p>
+            )}
+          </div>
+        </div>
       </section>
 
         <section className="surface-card h-fit rounded-2xl p-5 sm:p-6">
