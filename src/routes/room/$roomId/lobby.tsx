@@ -366,20 +366,20 @@ function Lobby() {
             </div>
           )}
 
-            <Button
-              type="submit"
-              size="lg"
-              disabled={waiting || full}
-              className="h-12 w-full rounded-xl"
-            >
-              {waiting
-                ? "En attente de validation de l'hôte…"
-                : full
-                  ? "Salon complet"
-                  : "Rejoindre maintenant"}
-              {!waiting && !full && <ArrowRight className="ml-1 h-4 w-4" />}
-            </Button>
-          </form>
+          <Button
+            type="submit"
+            size="lg"
+            disabled={waiting || full}
+            className="h-12 w-full rounded-xl"
+          >
+            {waiting
+              ? "En attente de validation de l'hôte…"
+              : full
+                ? "Salon complet"
+                : "Rejoindre maintenant"}
+            {!waiting && !full && <ArrowRight className="ml-1 h-4 w-4" />}
+          </Button>
+        </form>
 
           <p className="mt-4 text-xs text-muted-foreground">
             En rejoignant, vous acceptez les{" "}
