@@ -1,22 +1,18 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PageHeader, PageFooter } from "@/components/site";
 import { HeroSection, DemoRoomsSection, PillarsSection } from "@/components/pages";
+import { SITE } from "@/data/site";
+
+const PAGE_TITLE = `SPC Meet | ${SITE.name}`;
+const PAGE_DESC = `SPC Meet, la visioconférence officielle et exclusive de ${SITE.name}. Accès par code ou lien d'invitation.  : utilisateurs, développeurs et équipe support.`;
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "SPC Meet — Visioconférence STAF PRINT CENTER" },
-      {
-        name: "description",
-        content:
-          "SPC Meet, la visioconférence officielle de STAF PRINT CENTER. Rejoignez une réunion avec votre code d'accès ou votre lien d'invitation.",
-      },
-      { property: "og:title", content: "SPC Meet — Visioconférence STAF PRINT CENTER" },
-      {
-        property: "og:description",
-        content:
-          "Rejoignez votre réunion STAF PRINT CENTER avec un code d'accès ou un lien d'invitation.",
-      },
+      { title: PAGE_TITLE },
+      { name: "description", content: PAGE_DESC },
+      { property: "og:title", content: PAGE_TITLE },
+      { property: "og:description", content: PAGE_DESC },
     ],
   }),
   component: Home,
