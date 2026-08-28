@@ -231,7 +231,7 @@ function Lobby() {
           </div>
         )}
 
-          <div className="mt-4 grid gap-3 sm:grid-cols-3">
+          <div className="grid gap-3 rounded-2xl border border-border bg-card p-4 sm:grid-cols-3">
             <div>
               <Label htmlFor="audio-src" className="text-xs text-muted-foreground">
                 Microphone
