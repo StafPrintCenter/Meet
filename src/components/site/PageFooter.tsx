@@ -5,7 +5,7 @@ export function PageFooter() {
   const landingBase = SITE_LINK.landingUrl.replace(/\/$/, "");
 
   return (
-    <footer className="border-t border-border/70 bg-muted text-muted-foreground">
+    <footer className="border-t border-border/70 bg-background/80 text-muted-foreground">
       <div className="mx-auto flex w-full max-w-6xl flex-col items-center justify-between gap-4 px-4 py-6 text-center text-xs sm:flex-row sm:py-4 sm:text-left">
         <div className="flex flex-col items-center gap-1 sm:flex-row sm:gap-2">
           <span>© {new Date().getFullYear()} SPC Meet · Usage interne et clients.</span>
