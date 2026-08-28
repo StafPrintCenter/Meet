@@ -42,18 +42,18 @@ function Home() {
           <DemoRoomsSection />
           <PillarsSection />
 
-
-        {/* Actions secondaires */}
-        <div className="mt-5 flex flex-col items-start gap-3 w-full sm:flex-row sm:items-center">
-          <Link to="/admin/meet" className="w-full sm:w-auto">
-            <Button variant="outline" size="lg" className="h-11 rounded-xl w-full sm:w-auto bg-card">
-              <ShieldCheck className="mr-2 h-4 w-4 text-primary" />
-              Espace Staff & Formateurs
-            </Button>
-          </Link>
-          <div className="flex items-center gap-1.5 text-xs text-muted-foreground">
-            <Lock className="h-3.5 w-3.5 text-emerald-500" />
-            Salons protégés & chiffrés
+          {/* Actions secondaires */}
+          <div className="mt-5 flex flex-col items-start gap-3 w-full sm:flex-row sm:items-center">
+            <Link to="/admin/meet" className="w-full sm:w-auto">
+              <Button variant="outline" size="lg" className="h-11 rounded-xl w-full sm:w-auto bg-card">
+                <ShieldCheck className="mr-2 h-4 w-4 text-primary" />
+                Espace Staff & Formateurs
+              </Button>
+            </Link>
+            <div className="flex items-center gap-1.5 text-xs text-muted-foreground">
+              <Lock className="h-3.5 w-3.5 text-emerald-500" />
+              Salons protégés & chiffrés
+            </div>
           </div>
         </div>
       </main>
