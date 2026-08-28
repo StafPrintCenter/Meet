@@ -133,7 +133,7 @@ function Lobby() {
         return;
       }
       if (room.accessMode === "staff" && !isStafEmail(value)) {
-        toast.error("Accès réservé au personnel STAF PRINT CENTER (@stafprint.com).");
+        toast.error("Accès réservé au personnel STAF PRINT CENTER.");
         return;
       }
       if (
