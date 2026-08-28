@@ -1,5 +1,6 @@
 import { Link } from "@tanstack/react-router";
-import { ArrowRight, Video } from "lucide-react";
+import { ArrowRight, ShieldCheck, Video } from "lucide-react";
+import { Button } from "@/components/ui/button";
 import { DEMO_ROOMS } from "@/lib/meet-data";
 
 export function DemoRoomsSection() {
