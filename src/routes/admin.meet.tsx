@@ -66,8 +66,8 @@ function AdminMeet() {
   };
 
   return (
-    <div className="paper-grid flex min-h-screen flex-col">
-      <PageHeader>
+    <MeetShell
+      headerContent={
         <Badge className="rounded-full bg-slate-deep text-primary-foreground">
           <ShieldAlert className="mr-1 h-3 w-3 text-primary" />
           Super-Admin
