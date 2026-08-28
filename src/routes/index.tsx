@@ -22,7 +22,7 @@ export const Route = createFileRoute("/")({
 
 function Home() {
   return (
-    <div className="paper-grid flex min-h-screen flex-col bg-background font-sans text-foreground">
+    <div className="flex min-h-screen flex-col bg-background font-sans text-foreground">
       <PageHeader>
         <span className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-3 py-1.5 text-xs font-medium text-muted-foreground">
           <span className="relative flex h-2 w-2">
