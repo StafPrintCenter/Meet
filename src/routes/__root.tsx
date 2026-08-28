@@ -7,7 +7,7 @@ import { SITE } from "@/data/site";
 import { NotFoundComponent, ErrorComponent } from "@/components/errors";
 
 const PAGE_TITLE = `SPC Meet | ${SITE.name}`;
-const PAGE_DESC = `SPC Meet, la visioconférence officielle et exclusive de ${SITE.name}. Accès par code ou lien d'invitation.  : utilisateurs, développeurs et équipe support.`;
+const PAGE_DESC = `SPC Meet, la visioconférence officielle et exclusive de ${SITE.name}. Accès par code ou lien d'invitation pour utilisateurs, développeurs et équipe support.`;
 
 export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()({
   head: () => ({
