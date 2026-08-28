@@ -83,7 +83,7 @@ function AdminMeet() {
 
         <div className="mt-6 grid grid-cols-2 gap-3 lg:grid-cols-4">
           <StatCard
-            icon={<Radio className="h-4 w-4" />}
+            icon={<Radio className="h-4 w-4 text-emerald-600" />}
             label="Salons en cours"
             value={String(stats.live)}
           />
