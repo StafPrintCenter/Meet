@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import type { } from "@tanstack/react-start";
 
 // 1. Sécurisation de l'URL de base
-const RAW_URL = import.meta.env.VITE_TOOLKIT_URL;
+const RAW_URL = import.meta.env.VITE_MEETs_URL;
 const BASE_URL = RAW_URL.replace(/\/$/, "");
 
 // Date du jour pour les entités dépourvues de date ISO
