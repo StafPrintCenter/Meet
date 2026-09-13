@@ -2,32 +2,29 @@ import { Link } from "@tanstack/react-router";
 import { SITE, SITE_LINK } from "@/data/site";
 
 export function PageFooter() {
-  const landingBase = SITE_LINK.landingUrl.replace(/\/$/, "");
-
   return (
-    <footer className="border-t border-border/70 bg-background/80 text-muted-foreground">
-      <div className="mx-auto flex w-full max-w-6xl flex-col items-center justify-between gap-4 px-4 py-6 text-center text-xs sm:flex-row sm:py-4 sm:text-left">
-        <div className="flex flex-col items-center gap-1 sm:flex-row sm:gap-2">
-          <span>© {new Date().getFullYear()} SPC Meet · Usage interne et clients.</span>
+    <footer className="border-t border-border/70 bg-card/40">
+      <div className="mx-auto flex min-h-16 w-full max-w-6xl flex-col gap-3 px-6 py-4 sm:flex-row sm:items-center sm:justify-between sm:py-3">
+        {/* Copyright */}
+        <p className="text-center text-xs text-muted-foreground sm:text-left">
+          © {new Date().getFullYear()} SPC Meet · Tous droits réservés.
+          <span className="mx-1.5 hidden text-muted-foreground/50 sm:inline">|</span>
 
-          <span className="hidden text-muted-foreground/40 sm:inline" aria-hidden="true">
-            •
-          </span>
+          <a
+            href={SITE_LINK.landingUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-1 block font-medium underline underline-offset-4 transition-colors hover:text-primary sm:mt-0 sm:inline"
+          >
+            {SITE.name}
+          </a>
+        </p>
 
-          <p>
-            Un service fourni par{" "}
-            <a
-              href={SITE_LINK.landingUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="font-medium text-foreground underline underline-offset-4 transition-colors hover:text-primary"
-            >
-              {SITE.name}
-            </a>
-          </p>
-        </div>
-
-        <nav className="flex items-center justify-center gap-4 text-xs font-medium">
+        {/* Liens */}
+        <nav
+          aria-label="Liens légaux"
+          className="flex flex-wrap items-center justify-center gap-x-3 gap-y-1 text-xs text-muted-foreground sm:justify-end"
+        >
           <Link
             to="/terms"
             className="hover:text-primary underline underline-offset-4 transition-colors"
@@ -35,17 +32,26 @@ export function PageFooter() {
             Conditions d'utilisation
           </Link>
 
-          <span className="text-muted-foreground/40" aria-hidden="true">
-            •
-          </span>
+          <span className="text-muted-foreground/50">·</span>
 
           <a
-            href={`${landingBase}/legal/privacy`}
+            href={`${SITE_LINK.landingUrl}/legal/privacy`}
             target="_blank"
             rel="noopener noreferrer"
-            className="hover:text-primary underline underline-offset-4 transition-colors"
+            className="underline underline-offset-4 transition-colors hover:text-primary"
           >
             Confidentialité
+          </a>
+
+          <span className="text-muted-foreground/50">·</span>
+
+          <a
+            href={`${SITE_LINK.docsUrl}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="underline underline-offset-4 transition-colors hover:text-primary"
+          >
+            Lire la Documentation
           </a>
         </nav>
       </div>
