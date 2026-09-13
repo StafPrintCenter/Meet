@@ -13,9 +13,12 @@ export function PageHeader({ children }: PageHeaderProps) {
         <Link to="/" className="transition-opacity hover:opacity-80">
           <SpcDeskLogo className="mx-auto h-14 w-auto" />
         </Link>
+
         {/* Theme Switcher */}
-        <ThemeToggle />
-        {children}
+        <div className="flex items-center gap-2">
+          {children}
+          <ThemeToggle />
+        </div>
       </div>
     </header>
   );
