@@ -10,6 +10,7 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as TermsRouteImport } from './routes/terms'
 import { Route as AdminMeetRouteImport } from './routes/admin.meet'
 import { Route as RoomRoomIdIndexRouteImport } from './routes/room/$roomId/index'
@@ -18,6 +19,11 @@ import { Route as RoomRoomIdLobbyRouteImport } from './routes/room/$roomId/lobby
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
+  id: '/sitemap.xml',
+  path: '/sitemap.xml',
   getParentRoute: () => rootRouteImport,
 } as any)
 const TermsRoute = TermsRouteImport.update({
@@ -43,6 +49,7 @@ const RoomRoomIdLobbyRoute = RoomRoomIdLobbyRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/terms': typeof TermsRoute
   '/admin/meet': typeof AdminMeetRoute
   '/room/$roomId/lobby': typeof RoomRoomIdLobbyRoute
@@ -50,6 +57,7 @@ export interface FileRoutesByFullPath {
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/terms': typeof TermsRoute
   '/admin/meet': typeof AdminMeetRoute
   '/room/$roomId/lobby': typeof RoomRoomIdLobbyRoute
@@ -58,6 +66,7 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/terms': typeof TermsRoute
   '/admin/meet': typeof AdminMeetRoute
   '/room/$roomId/lobby': typeof RoomRoomIdLobbyRoute
@@ -66,12 +75,24 @@ export interface FileRoutesById {
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
-    '/' | '/terms' | '/admin/meet' | '/room/$roomId/lobby' | '/room/$roomId/'
+    | '/'
+    | '/sitemap.xml'
+    | '/terms'
+    | '/admin/meet'
+    | '/room/$roomId/lobby'
+    | '/room/$roomId/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/terms' | '/admin/meet' | '/room/$roomId/lobby' | '/room/$roomId'
+  to:
+    | '/'
+    | '/sitemap.xml'
+    | '/terms'
+    | '/admin/meet'
+    | '/room/$roomId/lobby'
+    | '/room/$roomId'
   id:
     | '__root__'
     | '/'
+    | '/sitemap.xml'
     | '/terms'
     | '/admin/meet'
     | '/room/$roomId/lobby'
@@ -80,6 +101,7 @@ export interface FileRouteTypes {
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   TermsRoute: typeof TermsRoute
   AdminMeetRoute: typeof AdminMeetRoute
   RoomRoomIdLobbyRoute: typeof RoomRoomIdLobbyRoute
@@ -93,6 +115,13 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sitemap.xml': {
+      id: '/sitemap.xml'
+      path: '/sitemap.xml'
+      fullPath: '/sitemap.xml'
+      preLoaderRoute: typeof SitemapDotxmlRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/terms': {
@@ -128,6 +157,7 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  SitemapDotxmlRoute: SitemapDotxmlRoute,
   TermsRoute: TermsRoute,
   AdminMeetRoute: AdminMeetRoute,
   RoomRoomIdLobbyRoute: RoomRoomIdLobbyRoute,
