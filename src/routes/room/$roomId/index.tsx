@@ -16,6 +16,10 @@ import { findRoom, formatDuration, initials, roleLabel, uid, type ChatMessage, t
 import { isStafEmail, readIdentity } from "@/lib/meet-session";
 import { cn } from "@/lib/utils";
 import { toast } from "sonner";
+import { SITE } from "@/data/site";
+
+const PAGE_TITLE = `Salon ${SITE.tool} - ${SITE.name}`;
+const PAGE_DESC = `Salle de visioconférence ${SITE.tool} de ${SITE.name}`;
 
 export const Route = createFileRoute("/room/$roomId/")({
   head: () => ({
