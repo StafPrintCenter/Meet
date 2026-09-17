@@ -3,6 +3,7 @@ import { useEffect } from "react";
 import { WifiOff, RefreshCw, Home, Terminal, ShieldAlert } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { reportError } from "@/lib/error/reporting";
+import { SITE } from "@/data/site";
 
 export function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
   const router = useRouter();
@@ -81,7 +82,7 @@ export function ErrorComponent({ error, reset }: { error: Error; reset: () => vo
 
       {/* Pied de page */}
       <footer className="relative z-10 text-center font-mono text-[11px] text-muted-foreground">
-        SPC Meet — Système de visio STAF PRINT CENTER
+        {SITE.tool} — Système de visio {SITE.name}
       </footer>
     </div>
   );
