@@ -1,5 +1,9 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { MeetShell } from "@/components/site/MeetShell";
+import { SITE } from "@/data/site";
+
+const PAGE_TITLE = `Conditions d'utilisation - ${SITE.tool} | ${SITE.name}`;
+const PAGE_DESC = `Conditions d'utilisation de ${SITE.tool}, le service de visioconférence exclusif de ${SITE.name}.`;
 
 export const Route = createFileRoute("/terms")({
   head: () => ({
