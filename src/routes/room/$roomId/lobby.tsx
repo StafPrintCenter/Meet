@@ -27,16 +27,10 @@ import { SITE, SITE_LINK } from "@/data/site";
 export const Route = createFileRoute("/room/$roomId/lobby")({
   head: () => ({
     meta: [
-      { title: "Salle d'attente — SPC Meet" },
-      {
-        name: "description",
-        content: "Vérifiez votre caméra et votre micro avant de rejoindre votre réunion SPC Meet.",
-      },
-      { property: "og:title", content: "Salle d'attente — SPC Meet" },
-      {
-        property: "og:description",
-        content: "Test caméra et micro avant d'entrer dans le salon SPC Meet.",
-      },
+      { title: `Salle d'attente - ${SITE.tool}` },
+      { name: "description", content: `Vérifiez votre caméra et votre micro avant de rejoindre votre réunion ${SITE.tool}.` },
+      { property: "og:title", content: `Salle d'attente - ${SITE.tool}` },
+      { property: "og:description", content: `Test caméra et micro avant d'entrer dans le salon ${SITE.tool}.` },
       { name: "robots", content: "noindex" },
     ],
   }),
