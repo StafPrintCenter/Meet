@@ -24,6 +24,9 @@ import { toast } from "sonner";
 import { MeetShell } from "@/components/site/MeetShell";
 import { SITE, SITE_LINK } from "@/data/site";
 
+const PAGE_TITLE = `Salle d'attente - ${SITE.tool} | ${SITE.name}`;
+const PAGE_DESC = `Vérifiez votre caméra et votre micro avant de rejoindre votre réunion ${SITE.tool}.`;
+
 export const Route = createFileRoute("/room/$roomId/lobby")({
   head: () => ({
     meta: [
