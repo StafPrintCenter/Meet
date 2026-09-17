@@ -22,7 +22,7 @@ import { isStafEmail, readIdentity, writeIdentity } from "@/lib/meet-session";
 import { cn } from "@/lib/utils";
 import { toast } from "sonner";
 import { MeetShell } from "@/components/site/MeetShell";
-import { SITE_LINK } from "@/data/site";
+import { SITE, SITE_LINK } from "@/data/site";
 
 export const Route = createFileRoute("/room/$roomId/lobby")({
   head: () => ({
