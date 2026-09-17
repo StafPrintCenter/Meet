@@ -14,17 +14,10 @@ const PAGE_DESC = `Tableau de supervision des salons ${SITE.tool} : réunions en
 export const Route = createFileRoute("/admin/meet")({
   head: () => ({
     meta: [
-      { title: "Supervision SPC Meet — Admin STAF PRINT CENTER" },
-      {
-        name: "description",
-        content:
-          "Tableau de supervision des salons SPC Meet : réunions en cours, statistiques d'usage et actions d'urgence.",
-      },
-      { property: "og:title", content: "Supervision SPC Meet — Admin" },
-      {
-        property: "og:description",
-        content: "Salons en cours, statistiques et actions d'urgence SPC Meet.",
-      },
+      { title: PAGE_TITLE },
+      { name: "description", content: PAGE_DESC },
+      { property: "og:title", content: PAGE_TITLE },
+      { property: "og:description", content: PAGE_DESC },
       { name: "robots", content: "noindex" },
     ],
   }),
