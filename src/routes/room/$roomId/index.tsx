@@ -1,29 +1,6 @@
 import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
-import {
-  Copy,
-  Download,
-  NotebookPen,
-  Hand,
-  Lock,
-  MessageSquare,
-  Mic,
-  MicOff,
-  MonitorUp,
-  MonitorX,
-  MoreVertical,
-  PhoneOff,
-  Send,
-  Settings2,
-  Smile,
-  Unlock,
-  UserMinus,
-  Users,
-  Video as VideoIcon,
-  VideoOff,
-  UserPlus,
-  X,
-} from "lucide-react";
+import { Copy, Download, NotebookPen, Hand, Lock, MessageSquare, Mic, MicOff, MonitorUp, MonitorX, MoreVertical, PhoneOff, Send, Settings2, Smile, Unlock, UserMinus, Users, Video as VideoIcon, VideoOff, UserPlus, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
