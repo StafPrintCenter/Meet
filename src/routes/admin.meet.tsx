@@ -72,9 +72,9 @@ function AdminMeet() {
       }
       mainClassName="mx-auto w-full max-w-6xl flex-1 px-4 py-8">
       <div>
-        <h1 className="font-display text-3xl tracking-tight sm:text-4xl">Supervision SPC Meet</h1>
+        <h1 className="font-display text-3xl tracking-tight sm:text-4xl">Supervision {SITE.tool}</h1>
         <p className="mt-2 max-w-2xl text-sm text-muted-foreground">
-          Vue temps réel des salons de visioconférence STAF PRINT CENTER, avec actions d'urgence de
+          Vue temps réel des salons de visioconférence {SITE.name}, avec actions d'urgence de
           fermeture et de révocation de liens.
         </p>
       </div>
