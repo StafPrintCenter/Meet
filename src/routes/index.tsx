@@ -3,8 +3,8 @@ import { MeetShell } from "@/components/site";
 import { HeroSection, DemoRoomsSection, PillarsSection } from "@/components/pages";
 import { SITE } from "@/data/site";
 
-const PAGE_TITLE = `SPC Meet | ${SITE.name}`;
-const PAGE_DESC = `SPC Meet, la visioconférence officielle et exclusive de ${SITE.name}. Accès par code ou lien d'invitation pour utilisateurs, développeurs et équipe support.`;
+const PAGE_TITLE = `${SITE.tool} | ${SITE.name}`;
+const PAGE_DESC = `${SITE.tool}, la visioconférence officielle et exclusive de ${SITE.name}. Accès par code ou lien d'invitation pour utilisateurs, développeurs et équipe support.`;
 
 export const Route = createFileRoute("/")({
   head: () => ({
