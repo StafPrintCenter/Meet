@@ -41,7 +41,7 @@ export function VideoTile({
     if (!el) return;
     if (stream && el.srcObject !== stream) {
       el.srcObject = stream;
-      el.play().catch(() => {});
+      el.play().catch(() => { });
     }
     if (!stream && el.srcObject) el.srcObject = null;
   }, [stream, showVideo]);
@@ -90,7 +90,7 @@ export function VideoTile({
         </div>
       )}
 
-      <div className="absolute inset-x-0 bottom-0 flex items-center justify-between gap-2 bg-gradient-to-t from-slate-deep/90 to-transparent px-3 py-2">
+      <div className="absolute inset-x-0 bottom-0 flex items-center justify-between gap-2 bg-linear-to-t from-slate-deep/90 to-transparent px-3 py-2">
         <span className="truncate text-xs font-medium text-primary-foreground sm:text-sm">
           {isSelf ? `${name} (vous)` : name}
           <span className="ml-2 hidden text-[10px] uppercase tracking-wide text-primary-foreground/60 sm:inline">
