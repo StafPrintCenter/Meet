@@ -6,6 +6,10 @@ import { Badge } from "@/components/ui/badge";
 import { MeetShell } from "@/components/site";
 import { ALL_ROOMS, formatDuration, type Room } from "@/lib/meet-data";
 import { toast } from "sonner";
+import { SITE } from "@/data/site";
+
+const PAGE_TITLE = `Supervision ${SITE.tool} - Admin ${SITE.name} | ${SITE.name}`;
+const PAGE_DESC = `Tableau de supervision des salons ${SITE.tool} : réunions en cours, statistiques d'usage et actions d'urgence.`;
 
 export const Route = createFileRoute("/admin/meet")({
   head: () => ({
