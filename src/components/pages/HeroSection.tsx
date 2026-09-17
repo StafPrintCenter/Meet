@@ -1,6 +1,6 @@
 import { useState } from "react";
-import { useNavigate, Link } from "@tanstack/react-router";
-import { ArrowRight, KeyRound, Lock, ShieldCheck, Video } from "lucide-react";
+import { useNavigate } from "@tanstack/react-router";
+import { ArrowRight, KeyRound, Lock, Video } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { SITE, SITE_LINK } from "@/data/site";
