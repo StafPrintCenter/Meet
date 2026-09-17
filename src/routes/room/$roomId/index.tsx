@@ -24,10 +24,10 @@ const PAGE_DESC = `Salle de visioconférence ${SITE.tool} de ${SITE.name}`;
 export const Route = createFileRoute("/room/$roomId/")({
   head: () => ({
     meta: [
-      { title: "Salon SPC Meet — STAF PRINT CENTER" },
-      { name: "description", content: "Salle de visioconférence SPC Meet de STAF PRINT CENTER." },
-      { property: "og:title", content: "Salon SPC Meet" },
-      { property: "og:description", content: "Visioconférence SPC Meet de STAF PRINT CENTER." },
+      { title: PAGE_TITLE },
+      { name: "description", content: PAGE_DESC },
+      { property: "og:title", content: PAGE_TITLE },
+      { property: "og:description", content: PAGE_DESC },
       { name: "robots", content: "noindex" },
     ],
   }),
