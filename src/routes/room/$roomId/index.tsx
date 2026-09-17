@@ -12,15 +12,7 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/u
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
 import { VideoTile } from "@/components/meet/VideoTile";
 import { useLocalMedia } from "@/hooks/useLocalMedia";
-import {
-  findRoom,
-  formatDuration,
-  initials,
-  roleLabel,
-  uid,
-  type ChatMessage,
-  type Participant,
-} from "@/lib/meet-data";
+import { findRoom, formatDuration, initials, roleLabel, uid, type ChatMessage, type Participant } from "@/lib/meet-data";
 import { isStafEmail, readIdentity } from "@/lib/meet-session";
 import { cn } from "@/lib/utils";
 import { toast } from "sonner";
