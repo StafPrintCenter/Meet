@@ -119,7 +119,7 @@ export const DEMO_ROOMS: Room[] = [
   room({
     id: "demo-cours",
     code: "789-012",
-    title: "Cours LMS — PAO & Colorimétrie",
+    title: "Cours LMS - PAO & Colorimétrie",
     hostName: "Estelle Dagba",
     kind: "Cours LMS",
     demo: true,
@@ -138,7 +138,7 @@ export const DEMO_ROOMS: Room[] = [
   room({
     id: "demo-rdv",
     code: "345-678",
-    title: "RDV Client — Devis Signalétique",
+    title: "RDV Client - Devis Signalétique",
     hostName: "Adjovi Kponou",
     kind: "RDV client",
     demo: true,
@@ -153,7 +153,7 @@ export const INTERNAL_ROOMS: Room[] = [
   room({
     id: "spc-direction",
     code: "901-234",
-    title: "Comité de direction — Arbitrage projets",
+    title: "Comité de direction - Arbitrage projets",
     hostName: "Super-Admin SPC",
     kind: "Réunion d'équipe",
     accessMode: "staff",
