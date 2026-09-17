@@ -8,17 +8,10 @@ const PAGE_DESC = `Conditions d'utilisation de ${SITE.tool}, le service de visio
 export const Route = createFileRoute("/terms")({
   head: () => ({
     meta: [
-      { title: "Conditions d'utilisation — SPC Meet" },
-      {
-        name: "description",
-        content:
-          "Conditions d'utilisation de SPC Meet, le service de visioconférence exclusif de STAF PRINT CENTER.",
-      },
-      { property: "og:title", content: "Conditions d'utilisation — SPC Meet" },
-      {
-        property: "og:description",
-        content: "Règles d'accès, obligations des hôtes et des participants sur SPC Meet.",
-      },
+      { title: PAGE_TITLE },
+      { name: "description", content: PAGE_DESC },
+      { property: "og:title", content: PAGE_TITLE },
+      { property: "og:description", content: PAGE_DESC },
     ],
   }),
   component: Terms,
