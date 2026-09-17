@@ -105,7 +105,7 @@ export const DEMO_ROOMS: Room[] = [
       {
         id: "c1",
         author: "Rachid Bello",
-        body: "Bienvenue à l'atelier SPC Meet 👋",
+        body: "Bienvenue à l'atelier 👋",
         at: Date.now() - 400000,
       },
       {
