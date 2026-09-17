@@ -20,11 +20,11 @@ export const Route = createFileRoute("/terms")({
 const sections = [
   {
     title: "1. Objet et périmètre",
-    body: "SPC Meet est le service de visioconférence exclusif de STAF PRINT CENTER. Il est mis à disposition du personnel, des formateurs, des apprenants et des clients de l'entreprise dans le cadre de réunions internes, de sessions de formation et de rendez-vous commerciaux.",
+    body: `${SITE.tool} est le service de visioconférence exclusif de ${SITE.name}. Il est mis à disposition du personnel, des formateurs, des apprenants et des clients de l'entreprise dans le cadre de réunions internes, de sessions de formation et de rendez-vous commerciaux.`,
   },
   {
     title: "2. Accès au service",
-    body: "La création de salons est réservée aux administrateurs, aux formateurs habilités et au système automatique de réservation de rendez-vous. Les invités rejoignent une réunion uniquement via un lien d'invitation valide ou un code d'accès, et selon les restrictions définies par l'hôte (accès libre, liste blanche d'emails, ou personnel STAF PRINT CENTER uniquement).",
+    body: `La création de salons est réservée aux administrateurs, aux formateurs habilités et au système automatique de réservation de rendez-vous. Les invités rejoignent une réunion uniquement via un lien d'invitation valide ou un code d'accès, et selon les restrictions définies par l'hôte (accès libre, liste blanche d'emails, ou personnel ${SITE.name} uniquement).`,
   },
   {
     title: "3. Usage acceptable",
@@ -36,11 +36,11 @@ const sections = [
   },
   {
     title: "5. Supervision et mesures d'urgence",
-    body: "Les administrateurs et super-administrateurs de STAF PRINT CENTER disposent d'une vue de supervision des salons en cours. En cas d'abus, de dépassement de quota ou d'incident de sécurité, ils peuvent révoquer un lien, modifier un code d'accès ou fermer immédiatement un salon.",
+    body: `Les administrateurs et super-administrateurs de ${SITE.name} disposent d'une vue de supervision des salons en cours. En cas d'abus, de dépassement de quota ou d'incident de sécurité, ils peuvent révoquer un lien, modifier un code d'accès ou fermer immédiatement un salon.`,
   },
   {
     title: "6. Disponibilité et limites techniques",
-    body: "Le service repose sur les capacités audio et vidéo de votre navigateur et sur votre connexion réseau. STAF PRINT CENTER met en œuvre les moyens raisonnables pour assurer la continuité du service sans garantir une disponibilité ininterrompue.",
+    body: `Le service repose sur les capacités audio et vidéo de votre navigateur et sur votre connexion réseau. ${SITE.name} met en œuvre les moyens raisonnables pour assurer la continuité du service sans garantir une disponibilité ininterrompue.`,
   },
   {
     title: "7. Modification des conditions",
