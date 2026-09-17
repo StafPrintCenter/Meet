@@ -130,7 +130,7 @@ function Lobby() {
         return;
       }
       if (room.accessMode === "staff" && !isStafEmail(value)) {
-        toast.error("Accès réservé au personnel STAF PRINT CENTER.");
+        toast.error(`Accès réservé au personnel ${SITE.name}.`);
         return;
       }
       if (
