@@ -236,7 +236,7 @@ function RoomPage() {
 
   const copyInvite = async () => {
     try {
-      await navigator.clipboard.writeText(`https://${shortLink} — code ${base.code}`);
+      await navigator.clipboard.writeText(`https://${shortLink} - code ${base.code}`);
       toast.success("Invitation copiée.");
     } catch {
       toast.error("Copie impossible, sélectionnez le lien manuellement.");
@@ -621,7 +621,7 @@ function RoomPage() {
             onClick={() => {
               setHandRaised((v) => {
                 const next = !v;
-                if (next) toast.info("Vous avez levé la main — l'hôte est notifié.");
+                if (next) toast.info("Vous avez levé la main - l'hôte est notifié.");
                 return next;
               });
             }}
