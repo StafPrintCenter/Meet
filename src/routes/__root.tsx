@@ -18,7 +18,9 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "robots", content: "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" },
       { title: PAGE_TITLE },
       { name: "description", content: PAGE_DESC },
-      { name: "author", content: SITE.name },
+      { name: "author", content: `${SITE.manager}` },
+
+      /* Open Graph / Facebook / WhatsApp */
       { property: "og:title", content: PAGE_TITLE },
       { property: "og:description", content: PAGE_DESC },
       { property: "og:type", content: "website" },
