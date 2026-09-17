@@ -82,7 +82,7 @@ export function ErrorComponent({ error, reset }: { error: Error; reset: () => vo
 
       {/* Pied de page */}
       <footer className="relative z-10 text-center font-mono text-[11px] text-muted-foreground">
-        {SITE.tool} — Système de visio {SITE.name}
+        {SITE.tool} - Système de visio {SITE.name}
       </footer>
     </div>
   );
