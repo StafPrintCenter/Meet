@@ -4,12 +4,6 @@
 
 @custom-variant dark (&:is(.dark *));
 
-/*
- * SPC MEET — Design system STAF PRINT CENTER
- * Off-white chaud + grille fine, Slate profond, Accent Orange/Ambre.
- * Display: Space Grotesk — UI: Inter.
- */
-
 @theme inline {
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
