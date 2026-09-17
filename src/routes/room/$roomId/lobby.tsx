@@ -30,10 +30,10 @@ const PAGE_DESC = `Vérifiez votre caméra et votre micro avant de rejoindre vot
 export const Route = createFileRoute("/room/$roomId/lobby")({
   head: () => ({
     meta: [
-      { title: `Salle d'attente - ${SITE.tool}` },
-      { name: "description", content: `Vérifiez votre caméra et votre micro avant de rejoindre votre réunion ${SITE.tool}.` },
-      { property: "og:title", content: `Salle d'attente - ${SITE.tool}` },
-      { property: "og:description", content: `Test caméra et micro avant d'entrer dans le salon ${SITE.tool}.` },
+      { title: PAGE_TITLE },
+      { name: "description", content: PAGE_DESC },
+      { property: "og:title", content: PAGE_TITLE },
+      { property: "og:description", content: PAGE_DESC },
       { name: "robots", content: "noindex" },
     ],
   }),
