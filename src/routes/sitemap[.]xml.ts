@@ -1,10 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import type { } from "@tanstack/react-start";
 
-// 1. Sécurisation de l'URL de base
-const RAW_URL = import.meta.env.VITE_MEET_URL;
-const BASE_URL = RAW_URL.replace(/\/$/, "");
-
 // Date du jour pour les entités dépourvues de date ISO
 const TODAY = new Date().toISOString().split("T")[0];
 
@@ -29,24 +25,30 @@ const formatDate = (dateStr?: string | null): string => {
 export const Route = createFileRoute("/sitemap.xml")({
   server: {
     handlers: {
-      GET: async () => {
+      GET: async ({ request }) => {
+        // 1. Récupération dynamique de l'origine depuis la requête du serveur
+        const origin = new URL(request.url).origin;
+
         // 2. Pages statiques de base
         const entries: SitemapEntry[] = [
           { path: "/", lastmod: TODAY, changefreq: "weekly", priority: "1.0" },
           { path: "/terms", lastmod: TODAY, changefreq: "weekly", priority: "0.8" },
         ];
 
-        const urls = entries.map((e) =>
-          [
+        // 4. Génération XML
+        const urls = entries.map((e) => {
+          const cleanPath = e.path.startsWith("/") ? e.path : `/${e.path}`;
+          const fullUrl = `${origin}${cleanPath}`;
+
+          return [
             `  <url>`,
-            `    <loc>${BASE_URL}${e.path}</loc>`,
+            `    <loc>${fullUrl}</loc>`,
+            e.lastmod ? `    <lastmod>${e.lastmod}</lastmod>` : null,
             e.changefreq ? `    <changefreq>${e.changefreq}</changefreq>` : null,
             e.priority ? `    <priority>${e.priority}</priority>` : null,
             `  </url>`,
-          ]
-            .filter(Boolean)
-            .join("\n"),
-        );
+          ].filter(Boolean).join("\n");
+        });
 
         const xml = [
           `<?xml version="1.0" encoding="UTF-8"?>`,
