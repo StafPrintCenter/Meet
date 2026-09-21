@@ -44,7 +44,7 @@ export function PageFooter() {
               Conditions d'utilisation
             </Link>
 
-          <span className="text-muted-foreground/50">·</span>
+            <span className="text-muted-foreground/50">·</span>
 
             <a
               href={`${landingBase}/legal/privacy`}
