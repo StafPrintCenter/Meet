@@ -55,7 +55,7 @@ export function PageFooter() {
               Confidentialité
             </a>
 
-          <span className="text-muted-foreground/50">·</span>
+            <span className="text-muted-foreground/50">·</span>
 
             <a
               href={SITE_LINK.docsUrl}
