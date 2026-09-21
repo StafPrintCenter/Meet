@@ -1,5 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { SITE, SITE_LINK } from "@/data/site";
+import { FacebookIcon, InstagramIcon, LinkedinIcon, XIcon, WhatsAppIcon } from "@/components/site/icons";
 
 export function PageFooter() {
   return (
