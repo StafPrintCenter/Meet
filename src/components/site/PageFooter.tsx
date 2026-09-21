@@ -31,17 +31,18 @@ export function PageFooter() {
           </a>
         </p>
 
-        {/* Liens */}
-        <nav
-          aria-label="Liens légaux"
-          className="flex flex-wrap items-center justify-center gap-x-3 gap-y-1 text-xs text-muted-foreground sm:justify-end"
-        >
-          <Link
-            to="/terms"
-            className="hover:text-primary underline underline-offset-4 transition-colors"
+        {/* Liens de navigation & Réseaux sociaux */}
+        <div className="flex flex-col items-center gap-3 sm:flex-row sm:gap-4">
+          <nav
+            aria-label="Liens légaux"
+            className="flex flex-wrap items-center justify-center gap-x-3 gap-y-1 text-xs text-muted-foreground"
           >
-            Conditions d'utilisation
-          </Link>
+            <Link
+              to="/terms"
+              className="underline underline-offset-4 transition-colors hover:text-primary"
+            >
+              Conditions d'utilisation
+            </Link>
 
           <span className="text-muted-foreground/50">·</span>
 
