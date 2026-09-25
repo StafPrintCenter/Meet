@@ -6,6 +6,7 @@ export function PageFooter() {
   const landingBase = SITE_LINK.landingUrl.replace(/\/$/, "");
 
   const socialLinks = [
+    { label: "LinkedIn", href: SITE.socials.linkedin, Icon: LinkedinIcon },
     { label: "Facebook", href: SITE.socials.facebook, Icon: FacebookIcon },
     { label: "Instagram", href: SITE.socials.instagram, Icon: InstagramIcon },
     { label: "X", href: SITE.socials.x, Icon: XIcon },
